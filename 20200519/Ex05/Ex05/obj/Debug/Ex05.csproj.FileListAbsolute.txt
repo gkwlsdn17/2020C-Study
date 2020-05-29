@@ -1,0 +1,5 @@
+D:\2020C#\20200519\Ex05\Ex05\bin\Debug\Ex05.exe.config
+D:\2020C#\20200519\Ex05\Ex05\bin\Debug\Ex05.exe
+D:\2020C#\20200519\Ex05\Ex05\bin\Debug\Ex05.pdb
+D:\2020C#\20200519\Ex05\Ex05\obj\Debug\Ex05.exe
+D:\2020C#\20200519\Ex05\Ex05\obj\Debug\Ex05.pdb

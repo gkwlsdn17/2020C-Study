@@ -1,0 +1,9 @@
+D:\2020C#\20200526\Minesweeper\Minesweeper\bin\Debug\Minesweeper.exe.config
+D:\2020C#\20200526\Minesweeper\Minesweeper\bin\Debug\Minesweeper.exe
+D:\2020C#\20200526\Minesweeper\Minesweeper\bin\Debug\Minesweeper.pdb
+D:\2020C#\20200526\Minesweeper\Minesweeper\obj\Debug\Minesweeper.Form1.resources
+D:\2020C#\20200526\Minesweeper\Minesweeper\obj\Debug\Minesweeper.Properties.Resources.resources
+D:\2020C#\20200526\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csproj.GenerateResource.Cache
+D:\2020C#\20200526\Minesweeper\Minesweeper\obj\Debug\Minesweeper.exe
+D:\2020C#\20200526\Minesweeper\Minesweeper\obj\Debug\Minesweeper.pdb
+D:\2020C#\20200526\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csprojResolveAssemblyReference.cache

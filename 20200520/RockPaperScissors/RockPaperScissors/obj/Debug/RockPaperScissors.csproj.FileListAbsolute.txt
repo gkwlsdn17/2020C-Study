@@ -1,0 +1,8 @@
+D:\2020C#\20200520\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.exe.config
+D:\2020C#\20200520\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.exe
+D:\2020C#\20200520\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.pdb
+D:\2020C#\20200520\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.Form1.resources
+D:\2020C#\20200520\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.Properties.Resources.resources
+D:\2020C#\20200520\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.csproj.GenerateResource.Cache
+D:\2020C#\20200520\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.exe
+D:\2020C#\20200520\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.pdb

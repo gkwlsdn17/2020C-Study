@@ -1,0 +1,9 @@
+D:\2020C#\20200526\NumberGame\NumberGame\bin\Debug\NumberGame.exe.config
+D:\2020C#\20200526\NumberGame\NumberGame\bin\Debug\NumberGame.exe
+D:\2020C#\20200526\NumberGame\NumberGame\bin\Debug\NumberGame.pdb
+D:\2020C#\20200526\NumberGame\NumberGame\obj\Debug\NumberGame.csprojResolveAssemblyReference.cache
+D:\2020C#\20200526\NumberGame\NumberGame\obj\Debug\NumberGame.Form1.resources
+D:\2020C#\20200526\NumberGame\NumberGame\obj\Debug\NumberGame.Properties.Resources.resources
+D:\2020C#\20200526\NumberGame\NumberGame\obj\Debug\NumberGame.csproj.GenerateResource.Cache
+D:\2020C#\20200526\NumberGame\NumberGame\obj\Debug\NumberGame.exe
+D:\2020C#\20200526\NumberGame\NumberGame\obj\Debug\NumberGame.pdb

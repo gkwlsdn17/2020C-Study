@@ -1,0 +1,13 @@
+D:\2020C#\vscode\bin\Debug\netcoreapp3.1\vscode.exe
+D:\2020C#\vscode\bin\Debug\netcoreapp3.1\vscode.deps.json
+D:\2020C#\vscode\bin\Debug\netcoreapp3.1\vscode.runtimeconfig.json
+D:\2020C#\vscode\bin\Debug\netcoreapp3.1\vscode.runtimeconfig.dev.json
+D:\2020C#\vscode\bin\Debug\netcoreapp3.1\vscode.dll
+D:\2020C#\vscode\bin\Debug\netcoreapp3.1\vscode.pdb
+D:\2020C#\vscode\obj\Debug\netcoreapp3.1\vscode.csprojAssemblyReference.cache
+D:\2020C#\vscode\obj\Debug\netcoreapp3.1\vscode.csproj.CoreCompileInputs.cache
+D:\2020C#\vscode\obj\Debug\netcoreapp3.1\vscode.AssemblyInfoInputs.cache
+D:\2020C#\vscode\obj\Debug\netcoreapp3.1\vscode.AssemblyInfo.cs
+D:\2020C#\vscode\obj\Debug\netcoreapp3.1\vscode.dll
+D:\2020C#\vscode\obj\Debug\netcoreapp3.1\vscode.pdb
+D:\2020C#\vscode\obj\Debug\netcoreapp3.1\vscode.genruntimeconfig.cache

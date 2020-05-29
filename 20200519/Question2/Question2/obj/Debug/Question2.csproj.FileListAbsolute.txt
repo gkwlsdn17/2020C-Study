@@ -1,0 +1,6 @@
+D:\2020C#\20200519\Question2\Question2\bin\Debug\Question2.exe.config
+D:\2020C#\20200519\Question2\Question2\bin\Debug\Question2.exe
+D:\2020C#\20200519\Question2\Question2\bin\Debug\Question2.pdb
+D:\2020C#\20200519\Question2\Question2\obj\Debug\Question2.exe
+D:\2020C#\20200519\Question2\Question2\obj\Debug\Question2.pdb
+D:\2020C#\20200519\Question2\Question2\obj\Debug\Question2.csprojResolveAssemblyReference.cache

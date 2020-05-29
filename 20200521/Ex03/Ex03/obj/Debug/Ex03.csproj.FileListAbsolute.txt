@@ -1,0 +1,8 @@
+D:\2020C#\20200521\Ex03\Ex03\bin\Debug\Ex03.exe.config
+D:\2020C#\20200521\Ex03\Ex03\obj\Debug\Ex03.Form1.resources
+D:\2020C#\20200521\Ex03\Ex03\obj\Debug\Ex03.Properties.Resources.resources
+D:\2020C#\20200521\Ex03\Ex03\obj\Debug\Ex03.csproj.GenerateResource.Cache
+D:\2020C#\20200521\Ex03\Ex03\bin\Debug\Ex03.exe
+D:\2020C#\20200521\Ex03\Ex03\bin\Debug\Ex03.pdb
+D:\2020C#\20200521\Ex03\Ex03\obj\Debug\Ex03.exe
+D:\2020C#\20200521\Ex03\Ex03\obj\Debug\Ex03.pdb

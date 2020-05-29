@@ -1,0 +1,6 @@
+D:\2020C#\20200519\Ex02\Ex02\bin\Debug\Ex02.exe.config
+D:\2020C#\20200519\Ex02\Ex02\bin\Debug\Ex02.exe
+D:\2020C#\20200519\Ex02\Ex02\bin\Debug\Ex02.pdb
+D:\2020C#\20200519\Ex02\Ex02\obj\Debug\Ex02.exe
+D:\2020C#\20200519\Ex02\Ex02\obj\Debug\Ex02.pdb
+D:\2020C#\20200519\Ex02\Ex02\obj\Debug\Ex02.csprojResolveAssemblyReference.cache

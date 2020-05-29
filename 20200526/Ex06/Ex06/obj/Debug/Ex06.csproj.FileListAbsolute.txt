@@ -1,0 +1,9 @@
+D:\2020C#\20200526\Ex06\Ex06\bin\Debug\Ex06.exe.config
+D:\2020C#\20200526\Ex06\Ex06\bin\Debug\Ex06.exe
+D:\2020C#\20200526\Ex06\Ex06\bin\Debug\Ex06.pdb
+D:\2020C#\20200526\Ex06\Ex06\obj\Debug\Ex06.csprojResolveAssemblyReference.cache
+D:\2020C#\20200526\Ex06\Ex06\obj\Debug\Ex06.Form1.resources
+D:\2020C#\20200526\Ex06\Ex06\obj\Debug\Ex06.Properties.Resources.resources
+D:\2020C#\20200526\Ex06\Ex06\obj\Debug\Ex06.csproj.GenerateResource.Cache
+D:\2020C#\20200526\Ex06\Ex06\obj\Debug\Ex06.exe
+D:\2020C#\20200526\Ex06\Ex06\obj\Debug\Ex06.pdb

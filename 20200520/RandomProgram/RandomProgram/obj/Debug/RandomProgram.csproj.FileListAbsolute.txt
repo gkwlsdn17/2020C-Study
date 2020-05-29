@@ -1,0 +1,9 @@
+D:\2020C#\20200520\RandomProgram\RandomProgram\bin\Debug\RandomProgram.exe.config
+D:\2020C#\20200520\RandomProgram\RandomProgram\bin\Debug\RandomProgram.exe
+D:\2020C#\20200520\RandomProgram\RandomProgram\bin\Debug\RandomProgram.pdb
+D:\2020C#\20200520\RandomProgram\RandomProgram\obj\Debug\RandomProgram.csprojResolveAssemblyReference.cache
+D:\2020C#\20200520\RandomProgram\RandomProgram\obj\Debug\RandomProgram.Form1.resources
+D:\2020C#\20200520\RandomProgram\RandomProgram\obj\Debug\RandomProgram.Properties.Resources.resources
+D:\2020C#\20200520\RandomProgram\RandomProgram\obj\Debug\RandomProgram.csproj.GenerateResource.Cache
+D:\2020C#\20200520\RandomProgram\RandomProgram\obj\Debug\RandomProgram.exe
+D:\2020C#\20200520\RandomProgram\RandomProgram\obj\Debug\RandomProgram.pdb

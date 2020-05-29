@@ -1,0 +1,8 @@
+D:\2020C#\20200528\Exam\Exam\bin\Debug\Exam.exe.config
+D:\2020C#\20200528\Exam\Exam\bin\Debug\Exam.exe
+D:\2020C#\20200528\Exam\Exam\bin\Debug\Exam.pdb
+D:\2020C#\20200528\Exam\Exam\obj\Debug\Exam.csprojResolveAssemblyReference.cache
+D:\2020C#\20200528\Exam\Exam\obj\Debug\Exam.Properties.Resources.resources
+D:\2020C#\20200528\Exam\Exam\obj\Debug\Exam.csproj.GenerateResource.Cache
+D:\2020C#\20200528\Exam\Exam\obj\Debug\Exam.exe
+D:\2020C#\20200528\Exam\Exam\obj\Debug\Exam.pdb

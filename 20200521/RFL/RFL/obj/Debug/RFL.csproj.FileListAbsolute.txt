@@ -1,0 +1,8 @@
+D:\2020C#\20200521\RFL\RFL\bin\Debug\RFL.exe.config
+D:\2020C#\20200521\RFL\RFL\bin\Debug\RFL.exe
+D:\2020C#\20200521\RFL\RFL\bin\Debug\RFL.pdb
+D:\2020C#\20200521\RFL\RFL\obj\Debug\RFL.csprojResolveAssemblyReference.cache
+D:\2020C#\20200521\RFL\RFL\obj\Debug\RFL.Properties.Resources.resources
+D:\2020C#\20200521\RFL\RFL\obj\Debug\RFL.csproj.GenerateResource.Cache
+D:\2020C#\20200521\RFL\RFL\obj\Debug\RFL.exe
+D:\2020C#\20200521\RFL\RFL\obj\Debug\RFL.pdb
