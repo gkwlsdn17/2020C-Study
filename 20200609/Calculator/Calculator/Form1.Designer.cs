@@ -262,9 +262,11 @@
             this.Controls.Add(this.button_4);
             this.Controls.Add(this.button_8);
             this.Controls.Add(this.button_7);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "간단한 계산기 v1.0";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

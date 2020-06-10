@@ -19,6 +19,7 @@ namespace Calculator
         {
             InitializeComponent();
         }
+        
         private void onBtnClick(object sender, EventArgs e)
         {
             switch (((Button)sender).Text)
@@ -38,9 +39,10 @@ namespace Calculator
                 case "/":
                 case "*":
                 case ".":
-                    input += ((Button)sender).Text;
-                    textBox_result.Text = input;
-                    break;
+                        input += ((Button)sender).Text;
+                        textBox_result.Text = input;
+                        break;
+                    
                 case "=":
                     ruleCalc();
                     input = calc().ToString();
@@ -261,6 +263,64 @@ namespace Calculator
                 }
                 
                 
+            }
+            
+        }
+
+        //키보드 입력 처리 함수
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                switch (e.KeyCode)
+                {
+
+                    case Keys.D0: case Keys.NumPad0: input += "0"; textBox_result.Text = input; break;
+                    case Keys.D1: case Keys.NumPad1: input += "1"; textBox_result.Text = input; break;
+                    case Keys.D2: case Keys.NumPad2: input += "2"; textBox_result.Text = input; break;
+                    case Keys.D3: case Keys.NumPad3: input += "3"; textBox_result.Text = input; break;
+                    case Keys.D4: case Keys.NumPad4: input += "4"; textBox_result.Text = input; break;
+                    case Keys.D5: case Keys.NumPad5: input += "5"; textBox_result.Text = input; break;
+                    case Keys.D6: case Keys.NumPad6: input += "6"; textBox_result.Text = input; break;
+                    case Keys.D7: case Keys.NumPad7: input += "7"; textBox_result.Text = input; break;
+                    case Keys.D8: case Keys.NumPad8: input += "8"; textBox_result.Text = input; break;
+                    case Keys.D9: case Keys.NumPad9: input += "9"; textBox_result.Text = input; break;
+                    case Keys.Add: input += "+"; textBox_result.Text = input; break;
+                    case Keys.Subtract: input += "-"; textBox_result.Text = input; break;
+                    case Keys.Multiply: input += "*"; textBox_result.Text = input; break;
+                    case Keys.Divide: input += "/"; textBox_result.Text = input; break;
+                    case Keys.OemPeriod: input += "."; textBox_result.Text = input; break;
+                    case Keys.Oemplus:
+                        ruleCalc();
+                        input = calc().ToString();
+
+                        textBox_result.Text = "순서대로 계산시 : " + input + "\r\n" + "산술연산 규칙대로 계산시 : " + ruleResult;
+
+
+                        break;
+                    case Keys.Enter:
+                        ruleCalc();
+                        input = calc().ToString();
+
+                        textBox_result.Text = "순서대로 계산시 : " + input + "\r\n" + "산술연산 규칙대로 계산시 : " + ruleResult;
+
+
+                        break;
+                    case Keys.Back:
+                        back();
+                        textBox_result.Text = input;
+                        break;
+                    case Keys.Escape:
+                        input = "";
+                        textBox_result.Clear();
+                        break;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("잘못 입력하셨습니다 다시 입력하세요");
+                input = "";
+                textBox_result.Text = input;
             }
             
         }
