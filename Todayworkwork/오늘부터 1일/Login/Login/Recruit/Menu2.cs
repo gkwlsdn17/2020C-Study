@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using System.Drawing.Text;
+using Login.Recruit;
 
 namespace Login
 {
@@ -26,22 +27,12 @@ namespace Login
         
         [DllImport("user32.dll")]
         private static extern int SetWindowRgn(IntPtr hWnd, IntPtr hRgn, bool bRedraw);
-        
+
         public Menu2()
         {
             InitializeComponent();
             
-            //검색창 테두리 둥글게
-            IntPtr tbRound = CreateRoundRectRgn(0, 0, panel_search.Width, panel_search.Height, 15, 15);
-            int i = SetWindowRgn(panel_search.Handle, tbRound, true);
-            //정렬버튼 테두리 둥글게
-            buttonInitSetting();
-            this.Refresh();
-
-            ActivateButton(btn_allSearch);
-
-            //목록 뿌리기
-            selectData();
+            
         }
         private void buttonInitSetting()
         {
@@ -67,16 +58,16 @@ namespace Login
             dataGridView1.Rows.Clear();
             foreach (DataRow viewData in ds.Tables[0].Rows)
             {
-                
-                dataGridView1.Rows.Add(viewData["W_NUM"],viewData["ID"],viewData["SUBJECT"],viewData["COM_NAME"],viewData["FIELD"],viewData["COUNT"]);
+
+                dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"], viewData["COUNT"]);
             }
             
             
             sqlcon.Close();
         }
-        private void selectData(string id)
+        private void selectData(string str)
         {
-            if (id.Equals(""))
+            if (str.Equals(""))
             {
                 selectData();
             }
@@ -87,7 +78,7 @@ namespace Login
                 SqlConnection sqlcon = new SqlConnection(strconn);
                 sqlcon.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "select * from RECRUIT where ID='" + id + "' order by W_NUM desc";
+                cmd.CommandText = "select * from RECRUIT where SUBJECT LIKE '%"+str+"%' or COM_NAME LIKE '%"+str+"%' order by SUBJECT ASC, COM_NAME DESC";
                 cmd.Connection = sqlcon;
                 SqlDataAdapter adpt = new SqlDataAdapter(cmd.CommandText, sqlcon);
                 adpt.Fill(ds);
@@ -96,7 +87,7 @@ namespace Login
                 foreach (DataRow viewData in ds.Tables[0].Rows)
                 {
 
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["ID"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["COUNT"]);
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"],  viewData["COUNT"]);
                 }
 
 
@@ -133,7 +124,7 @@ namespace Login
                 foreach (DataRow viewData in ds.Tables[0].Rows)
                 {
 
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["ID"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["COUNT"]);
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"], viewData["COUNT"]);
                 }
 
 
@@ -154,7 +145,7 @@ namespace Login
                 foreach (DataRow viewData in ds.Tables[0].Rows)
                 {
 
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["ID"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["COUNT"]);
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"], viewData["COUNT"]);
                 }
 
 
@@ -181,7 +172,7 @@ namespace Login
                 foreach (DataRow viewData in ds.Tables[0].Rows)
                 {
 
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["ID"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["COUNT"]);
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"], viewData["COUNT"]);
                 }
 
 
@@ -202,7 +193,7 @@ namespace Login
                 foreach (DataRow viewData in ds.Tables[0].Rows)
                 {
 
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["ID"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["COUNT"]);
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"], viewData["COUNT"]);
                 }
 
 
@@ -229,7 +220,7 @@ namespace Login
                 foreach (DataRow viewData in ds.Tables[0].Rows)
                 {
 
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["ID"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["COUNT"]);
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"], viewData["COUNT"]);
                 }
 
 
@@ -250,7 +241,7 @@ namespace Login
                 foreach (DataRow viewData in ds.Tables[0].Rows)
                 {
 
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["ID"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["COUNT"]);
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"], viewData["COUNT"]);
                 }
 
 
@@ -279,7 +270,7 @@ namespace Login
 
             }
         }
-        private bool firstClick = false;
+        private bool firstClick = false; //맨 처음 검색박스 클릭 시 안내 글자 사라짐
         private void tb_search_Click(object sender, EventArgs e)
         {
             if (firstClick == false)
@@ -287,6 +278,56 @@ namespace Login
                 firstClick = true;
                 tb_search.Text = "";
             }
+            
+        }
+
+        private void Menu2_Load(object sender, EventArgs e)
+        {
+            //검색창 테두리 둥글게
+            IntPtr tbRound = CreateRoundRectRgn(0, 0, panel_search.Width, panel_search.Height, 15, 15);
+            int i = SetWindowRgn(panel_search.Handle, tbRound, true);
+            //정렬버튼 테두리 둥글게
+            buttonInitSetting();
+            this.Refresh();
+
+            ActivateButton(btn_allSearch);
+
+            //목록 뿌리기
+            selectData();
+        }
+
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //맨 마지막 행은 데이터가 없으므로 클릭해도 정보가 뜨지 않게 함
+            if(e.RowIndex!=dataGridView1.Rows.Count-1)
+            {
+                int w_num = int.Parse(dataGridView1[0, e.RowIndex].Value.ToString());
+
+                DataSet ds = new DataSet();
+
+                SqlConnection sqlcon = new SqlConnection(strconn);
+                sqlcon.Open();
+
+                //글번호가 같은 데이터를 불러온 후 WriteDetail폼에 전달
+                SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where W_NUM="+w_num, sqlcon);
+                adpt.Fill(ds);
+                WriteDetail writedetail = new WriteDetail(ds);
+
+                //조회수 증가
+                SqlCommand cmd = new SqlCommand("update RECRUIT set COUNT = COUNT+1 where W_NUM = "+ ds.Tables[0].Rows[0]["W_NUM"],sqlcon);
+                cmd.ExecuteNonQuery();
+
+                writedetail.TopLevel = false;
+                writedetail.FormBorderStyle = FormBorderStyle.None;
+                writedetail.Dock = DockStyle.Fill;
+                this.Controls.Add(writedetail);
+                writedetail.BringToFront();
+                writedetail.Show();
+                sqlcon.Close();
+            }
+           
+            
             
         }
     }

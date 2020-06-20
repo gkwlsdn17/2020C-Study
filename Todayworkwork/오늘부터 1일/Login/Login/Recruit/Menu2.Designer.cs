@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu2));
             this.panel_search = new System.Windows.Forms.Panel();
-            this.btn_search = new Login.Recruit.CircularButton();
             this.tb_search = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.W_NUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SUBJECT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COM_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FIELD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_allSearch = new System.Windows.Forms.Button();
             this.btn_comSearch = new System.Windows.Forms.Button();
             this.btn_fieldSearch = new System.Windows.Forms.Button();
             this.btn_countSearch = new System.Windows.Forms.Button();
+            this.btn_search = new Login.Recruit.CircularButton();
             this.panel_search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -56,20 +56,6 @@
             this.panel_search.Name = "panel_search";
             this.panel_search.Size = new System.Drawing.Size(855, 87);
             this.panel_search.TabIndex = 0;
-            // 
-            // btn_search
-            // 
-            this.btn_search.AutoSize = true;
-            this.btn_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            this.btn_search.FlatAppearance.BorderSize = 0;
-            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_search.Image = ((System.Drawing.Image)(resources.GetObject("btn_search.Image")));
-            this.btn_search.Location = new System.Drawing.Point(32, 12);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(46, 46);
-            this.btn_search.TabIndex = 2;
-            this.btn_search.UseVisualStyleBackColor = false;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // tb_search
             // 
@@ -90,57 +76,73 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.W_NUM,
-            this.ID,
             this.SUBJECT,
             this.COM_NAME,
             this.FIELD,
+            this.ID,
             this.COUNT});
             this.dataGridView1.Location = new System.Drawing.Point(51, 212);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1031, 548);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // W_NUM
             // 
+            this.W_NUM.FillWeight = 30F;
             this.W_NUM.HeaderText = "글번호";
             this.W_NUM.MinimumWidth = 6;
             this.W_NUM.Name = "W_NUM";
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "작성자";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
+            this.W_NUM.ReadOnly = true;
             // 
             // SUBJECT
             // 
+            this.SUBJECT.FillWeight = 130F;
             this.SUBJECT.HeaderText = "제목";
             this.SUBJECT.MinimumWidth = 6;
             this.SUBJECT.Name = "SUBJECT";
+            this.SUBJECT.ReadOnly = true;
             // 
             // COM_NAME
             // 
+            this.COM_NAME.FillWeight = 70F;
             this.COM_NAME.HeaderText = "업체명";
             this.COM_NAME.MinimumWidth = 6;
             this.COM_NAME.Name = "COM_NAME";
+            this.COM_NAME.ReadOnly = true;
             // 
             // FIELD
             // 
+            this.FIELD.FillWeight = 70F;
             this.FIELD.HeaderText = "직종";
             this.FIELD.MinimumWidth = 6;
             this.FIELD.Name = "FIELD";
+            this.FIELD.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.FillWeight = 70F;
+            this.ID.HeaderText = "작성자";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // COUNT
             // 
+            this.COUNT.FillWeight = 40F;
             this.COUNT.HeaderText = "조회수";
             this.COUNT.MinimumWidth = 6;
             this.COUNT.Name = "COUNT";
+            this.COUNT.ReadOnly = true;
             // 
             // btn_allSearch
             // 
@@ -195,6 +197,20 @@
             this.btn_countSearch.UseVisualStyleBackColor = false;
             this.btn_countSearch.Click += new System.EventHandler(this.btn_countSearch_Click);
             // 
+            // btn_search
+            // 
+            this.btn_search.AutoSize = true;
+            this.btn_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
+            this.btn_search.FlatAppearance.BorderSize = 0;
+            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_search.Image = ((System.Drawing.Image)(resources.GetObject("btn_search.Image")));
+            this.btn_search.Location = new System.Drawing.Point(32, 12);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(46, 46);
+            this.btn_search.TabIndex = 2;
+            this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
             // Menu2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -208,6 +224,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Menu2";
             this.Size = new System.Drawing.Size(1137, 794);
+            this.Load += new System.EventHandler(this.Menu2_Load);
             this.panel_search.ResumeLayout(false);
             this.panel_search.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -220,16 +237,16 @@
         private System.Windows.Forms.Panel panel_search;
         private System.Windows.Forms.TextBox tb_search;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn W_NUM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SUBJECT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COM_NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FIELD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COUNT;
         private System.Windows.Forms.Button btn_allSearch;
         private System.Windows.Forms.Button btn_comSearch;
         private System.Windows.Forms.Button btn_fieldSearch;
         private System.Windows.Forms.Button btn_countSearch;
         private Recruit.CircularButton btn_search;
+        private System.Windows.Forms.DataGridViewTextBoxColumn W_NUM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SUBJECT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COM_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FIELD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COUNT;
     }
 }
