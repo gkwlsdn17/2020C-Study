@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu2));
             this.panel_search = new System.Windows.Forms.Panel();
+            this.btn_search = new Login.Recruit.CircularButton();
             this.tb_search = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.W_NUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +55,6 @@
             this.btn_paySearch = new System.Windows.Forms.Button();
             this.btn_w_placeSearch = new System.Windows.Forms.Button();
             this.btn_w_end_timeSearch = new System.Windows.Forms.Button();
-            this.btn_search = new Login.Recruit.CircularButton();
             this.panel_search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -69,6 +69,20 @@
             this.panel_search.Name = "panel_search";
             this.panel_search.Size = new System.Drawing.Size(855, 80);
             this.panel_search.TabIndex = 0;
+            // 
+            // btn_search
+            // 
+            this.btn_search.AutoSize = true;
+            this.btn_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
+            this.btn_search.FlatAppearance.BorderSize = 0;
+            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_search.Image = ((System.Drawing.Image)(resources.GetObject("btn_search.Image")));
+            this.btn_search.Location = new System.Drawing.Point(32, 12);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(46, 46);
+            this.btn_search.TabIndex = 2;
+            this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // tb_search
             // 
@@ -88,6 +102,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
@@ -355,20 +370,6 @@
             this.btn_w_end_timeSearch.Text = "마감일";
             this.btn_w_end_timeSearch.UseVisualStyleBackColor = false;
             this.btn_w_end_timeSearch.Click += new System.EventHandler(this.btn_w_end_time_Click);
-            // 
-            // btn_search
-            // 
-            this.btn_search.AutoSize = true;
-            this.btn_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            this.btn_search.FlatAppearance.BorderSize = 0;
-            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_search.Image = ((System.Drawing.Image)(resources.GetObject("btn_search.Image")));
-            this.btn_search.Location = new System.Drawing.Point(32, 12);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(46, 46);
-            this.btn_search.TabIndex = 2;
-            this.btn_search.UseVisualStyleBackColor = false;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // Menu2
             // 
