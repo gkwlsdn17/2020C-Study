@@ -31,6 +31,26 @@ namespace Login.Recruit
         private void WriteDetail_Load(object sender, EventArgs e)
         {
             lb_subject.Text = (string)dr["subject"];
+            lb_com_name.Text = (string)dr["COM_NAME"];
+            lb_field.Text = (string)dr["FIELD"];
+            int pay = (int)dr["PAY"];
+            string pay_convert = string.Format("{0}", pay.ToString("#,##0"))+" 원";
+            lb_pay.Text = pay_convert;
+
+            DateTime w_date = (DateTime)dr["W_DATE"];
+            lb_w_date.Text = w_date.ToString("yyyy/MM/dd");
+
+            DateTime w_period = (DateTime)dr["PERIOD"];
+            lb_period.Text= w_period.ToString("yyyy/MM/dd");
+
+            DateTime w_start_time = (DateTime)dr["W_START_TIME"];
+            DateTime w_end_time = (DateTime)dr["W_END_TIME"];
+            lb_time.Text = w_start_time.ToString("HH:mm")+ " ~ "+w_end_time.ToString("HH:mm");
+
+            lb_w_place.Text = (string)dr["W_PLACE"];
+            lb_w_content.Text = (string)dr["W_CONTENT"];
+
+            lb_id.Text = (string)dr["ID"];
         }
     }
 }

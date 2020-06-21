@@ -34,6 +34,20 @@ namespace Login
             
             
         }
+        private void Menu2_Load(object sender, EventArgs e)
+        {
+            //검색창 테두리 둥글게
+            IntPtr tbRound = CreateRoundRectRgn(0, 0, panel_search.Width, panel_search.Height, 15, 15);
+            int i = SetWindowRgn(panel_search.Handle, tbRound, true);
+            //정렬버튼 테두리 둥글게
+            buttonInitSetting();
+            this.Refresh();
+
+            ActivateButton(btn_allSearch);
+
+            //목록 뿌리기
+            selectData();
+        }
         private void buttonInitSetting()
         {
             IntPtr btnAllSearchRound = CreateRoundRectRgn(0, 0, btn_allSearch.Width, btn_allSearch.Height, 15, 15);
@@ -42,28 +56,37 @@ namespace Login
             int i3 = SetWindowRgn(btn_comSearch.Handle, btn_comSearchRound, true);
             IntPtr btn_countSearchRound = CreateRoundRectRgn(0, 0, btn_countSearch.Width, btn_countSearch.Height, 15, 15);
             int i4 = SetWindowRgn(btn_countSearch.Handle, btn_countSearchRound, true);
-            IntPtr btn_fieldSearchRound = CreateRoundRectRgn(0, 0, btn_fieldSearch.Width, btn_fieldSearch.Height, 15, 15);
-            int i5 = SetWindowRgn(btn_fieldSearch.Handle, btn_fieldSearchRound, true);
+            IntPtr btn_subjectSearchRound = CreateRoundRectRgn(0, 0, btn_subjectSearch.Width, btn_subjectSearch.Height, 15, 15);
+            int i5 = SetWindowRgn(btn_subjectSearch.Handle, btn_subjectSearchRound, true);
+            IntPtr btn_paySearchRound = CreateRoundRectRgn(0, 0, btn_paySearch.Width, btn_paySearch.Height, 15, 15);
+            int i6 = SetWindowRgn(btn_paySearch.Handle, btn_paySearchRound, true);
+            IntPtr btn_w_placeSearchRound = CreateRoundRectRgn(0, 0, btn_w_placeSearch.Width, btn_w_placeSearch.Height, 15, 15);
+            int i7 = SetWindowRgn(btn_w_placeSearch.Handle, btn_w_placeSearchRound, true);
+            IntPtr btn_w_end_timeSearchRound = CreateRoundRectRgn(0, 0, btn_w_end_timeSearch.Width, btn_w_end_timeSearch.Height, 15, 15);
+            int i8 = SetWindowRgn(btn_w_end_timeSearch.Handle, btn_w_end_timeSearchRound, true);
+
         }
         private void selectData()
         {
+
             DataSet ds = new DataSet();
 
             SqlConnection sqlcon = new SqlConnection(strconn);
             sqlcon.Open();
-            
+
             SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by W_NUM desc", sqlcon);
             adpt.Fill(ds);
 
             dataGridView1.Rows.Clear();
             foreach (DataRow viewData in ds.Tables[0].Rows)
             {
-
-                dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"], viewData["COUNT"]);
+                DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
+                int pay = (int)viewData["PAY"];
+                string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
+                dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
             }
-            
-            
             sqlcon.Close();
+
         }
         private void selectData(string str)
         {
@@ -86,8 +109,10 @@ namespace Login
                 dataGridView1.Rows.Clear();
                 foreach (DataRow viewData in ds.Tables[0].Rows)
                 {
-
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"],  viewData["COUNT"]);
+                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
+                    int pay = (int)viewData["PAY"];
+                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
                 }
 
 
@@ -123,8 +148,10 @@ namespace Login
                 dataGridView1.Rows.Clear();
                 foreach (DataRow viewData in ds.Tables[0].Rows)
                 {
-
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"], viewData["COUNT"]);
+                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
+                    int pay = (int)viewData["PAY"];
+                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
                 }
 
 
@@ -144,8 +171,10 @@ namespace Login
                 dataGridView1.Rows.Clear();
                 foreach (DataRow viewData in ds.Tables[0].Rows)
                 {
-
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"], viewData["COUNT"]);
+                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
+                    int pay = (int)viewData["PAY"];
+                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
                 }
 
 
@@ -154,55 +183,7 @@ namespace Login
             }
             ActivateButton(sender);
         }
-
-        private bool fieldSearchChoice = true; //true면 직종 오름차순, false면 직종 내림차순
-        private void btn_fieldSearch_Click(object sender, EventArgs e)
-        {
-            if(fieldSearchChoice == true)
-            {
-                DataSet ds = new DataSet();
-
-                SqlConnection sqlcon = new SqlConnection(strconn);
-                sqlcon.Open();
-
-                SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by FIELD ASC, W_NUM DESC;", sqlcon);
-                adpt.Fill(ds);
-
-                dataGridView1.Rows.Clear();
-                foreach (DataRow viewData in ds.Tables[0].Rows)
-                {
-
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"], viewData["COUNT"]);
-                }
-
-
-                sqlcon.Close();
-                fieldSearchChoice = false;
-            }
-            else
-            {
-                DataSet ds = new DataSet();
-
-                SqlConnection sqlcon = new SqlConnection(strconn);
-                sqlcon.Open();
-
-                SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by FIELD DESC, W_NUM DESC;", sqlcon);
-                adpt.Fill(ds);
-
-                dataGridView1.Rows.Clear();
-                foreach (DataRow viewData in ds.Tables[0].Rows)
-                {
-
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"], viewData["COUNT"]);
-                }
-
-
-                sqlcon.Close();
-                fieldSearchChoice = true;
-            }
-            ActivateButton(sender);
-        }
-
+        
         private bool countSearchChoice = true; //true면 조회수 내림차순, false면 오름차순
         private void btn_countSearch_Click(object sender, EventArgs e)
         {
@@ -219,8 +200,10 @@ namespace Login
                 dataGridView1.Rows.Clear();
                 foreach (DataRow viewData in ds.Tables[0].Rows)
                 {
-
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"], viewData["COUNT"]);
+                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
+                    int pay = (int)viewData["PAY"];
+                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
                 }
 
 
@@ -240,8 +223,10 @@ namespace Login
                 dataGridView1.Rows.Clear();
                 foreach (DataRow viewData in ds.Tables[0].Rows)
                 {
-
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["SUBJECT"], viewData["COM_NAME"], viewData["FIELD"], viewData["ID"], viewData["COUNT"]);
+                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
+                    int pay = (int)viewData["PAY"];
+                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
                 }
 
 
@@ -281,54 +266,266 @@ namespace Login
             
         }
 
-        private void Menu2_Load(object sender, EventArgs e)
-        {
-            //검색창 테두리 둥글게
-            IntPtr tbRound = CreateRoundRectRgn(0, 0, panel_search.Width, panel_search.Height, 15, 15);
-            int i = SetWindowRgn(panel_search.Handle, tbRound, true);
-            //정렬버튼 테두리 둥글게
-            buttonInitSetting();
-            this.Refresh();
-
-            ActivateButton(btn_allSearch);
-
-            //목록 뿌리기
-            selectData();
-        }
+       
 
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //맨 마지막 행은 데이터가 없으므로 클릭해도 정보가 뜨지 않게 함
-            if(e.RowIndex!=dataGridView1.Rows.Count-1)
-            {
-                int w_num = int.Parse(dataGridView1[0, e.RowIndex].Value.ToString());
 
+            int w_num = int.Parse(dataGridView1[0, e.RowIndex].Value.ToString());
+
+            DataSet ds = new DataSet();
+
+            SqlConnection sqlcon = new SqlConnection(strconn);
+            sqlcon.Open();
+
+            //글번호가 같은 데이터를 불러온 후 WriteDetail폼에 전달
+            SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where W_NUM=" + w_num, sqlcon);
+            adpt.Fill(ds);
+            WriteDetail writedetail = new WriteDetail(ds);
+
+            //조회수 증가
+            SqlCommand cmd = new SqlCommand("update RECRUIT set COUNT = COUNT+1 where W_NUM = " + ds.Tables[0].Rows[0]["W_NUM"], sqlcon);
+            cmd.ExecuteNonQuery();
+
+            writedetail.TopLevel = false;
+            writedetail.FormBorderStyle = FormBorderStyle.None;
+            writedetail.Dock = DockStyle.Fill;
+            this.Controls.Add(writedetail);
+            writedetail.BringToFront();
+            writedetail.Show();
+            sqlcon.Close();
+
+
+
+
+        }
+
+        private bool paySearchChoice = true; //true는 내림차순, false는 오름차순, 기본은 내림차순으로 설정
+        private void btn_pay_Click(object sender, EventArgs e)
+        {
+            if (paySearchChoice == true)
+            {
                 DataSet ds = new DataSet();
 
                 SqlConnection sqlcon = new SqlConnection(strconn);
                 sqlcon.Open();
 
-                //글번호가 같은 데이터를 불러온 후 WriteDetail폼에 전달
-                SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where W_NUM="+w_num, sqlcon);
+                SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by PAY DESC, W_NUM DESC;", sqlcon);
                 adpt.Fill(ds);
-                WriteDetail writedetail = new WriteDetail(ds);
 
-                //조회수 증가
-                SqlCommand cmd = new SqlCommand("update RECRUIT set COUNT = COUNT+1 where W_NUM = "+ ds.Tables[0].Rows[0]["W_NUM"],sqlcon);
-                cmd.ExecuteNonQuery();
+                dataGridView1.Rows.Clear();
+                foreach (DataRow viewData in ds.Tables[0].Rows)
+                {
+                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
+                    int pay = (int)viewData["PAY"];
+                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
+                }
 
-                writedetail.TopLevel = false;
-                writedetail.FormBorderStyle = FormBorderStyle.None;
-                writedetail.Dock = DockStyle.Fill;
-                this.Controls.Add(writedetail);
-                writedetail.BringToFront();
-                writedetail.Show();
+
                 sqlcon.Close();
+                paySearchChoice = false;
             }
-           
-            
-            
+            else
+            {
+                DataSet ds = new DataSet();
+
+                SqlConnection sqlcon = new SqlConnection(strconn);
+                sqlcon.Open();
+
+                SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by PAY ASC, W_NUM DESC;", sqlcon);
+                adpt.Fill(ds);
+
+                dataGridView1.Rows.Clear();
+                foreach (DataRow viewData in ds.Tables[0].Rows)
+                {
+                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
+                    int pay = (int)viewData["PAY"];
+                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
+                }
+
+
+                sqlcon.Close();
+                paySearchChoice = true;
+            }
+            ActivateButton(sender);
+        }
+
+        private bool w_placeSearchChoice = false; //false는 오름차순, true는 내림차순, 기본은 오름차순으로 설정
+        private void btn_w_place_Click(object sender, EventArgs e)
+        {
+            if (w_placeSearchChoice == true)
+            {
+                DataSet ds = new DataSet();
+
+                SqlConnection sqlcon = new SqlConnection(strconn);
+                sqlcon.Open();
+
+                SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by W_PLACE DESC, W_NUM DESC;", sqlcon);
+                adpt.Fill(ds);
+
+                dataGridView1.Rows.Clear();
+                foreach (DataRow viewData in ds.Tables[0].Rows)
+                {
+                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
+                    int pay = (int)viewData["PAY"];
+                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
+                }
+
+
+                sqlcon.Close();
+                w_placeSearchChoice = false;
+            }
+            else
+            {
+                DataSet ds = new DataSet();
+
+                SqlConnection sqlcon = new SqlConnection(strconn);
+                sqlcon.Open();
+
+                SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by W_PLACE ASC, W_NUM DESC;", sqlcon);
+                adpt.Fill(ds);
+
+                dataGridView1.Rows.Clear();
+                foreach (DataRow viewData in ds.Tables[0].Rows)
+                {
+                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
+                    int pay = (int)viewData["PAY"];
+                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
+                }
+
+
+                sqlcon.Close();
+                w_placeSearchChoice = true;
+            }
+            ActivateButton(sender);
+        }
+
+        private bool w_end_timeSearchChoice = false; //true면 내림차순, false면 오름차순, 기본은 오름차순으로 설정
+        private void btn_w_end_time_Click(object sender, EventArgs e)
+        {
+            if (w_end_timeSearchChoice == true)
+            {
+                DataSet ds = new DataSet();
+
+                SqlConnection sqlcon = new SqlConnection(strconn);
+                sqlcon.Open();
+
+                SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by W_END_TIME DESC, W_NUM DESC;", sqlcon);
+                adpt.Fill(ds);
+
+                dataGridView1.Rows.Clear();
+                foreach (DataRow viewData in ds.Tables[0].Rows)
+                {
+                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
+                    int pay = (int)viewData["PAY"];
+                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
+                }
+
+
+                sqlcon.Close();
+                w_end_timeSearchChoice = false;
+            }
+            else
+            {
+                DataSet ds = new DataSet();
+
+                SqlConnection sqlcon = new SqlConnection(strconn);
+                sqlcon.Open();
+
+                SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by W_END_TIME ASC, W_NUM DESC;", sqlcon);
+                adpt.Fill(ds);
+
+                dataGridView1.Rows.Clear();
+                foreach (DataRow viewData in ds.Tables[0].Rows)
+                {
+                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
+                    int pay = (int)viewData["PAY"];
+                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
+                }
+
+
+                sqlcon.Close();
+                w_end_timeSearchChoice = true;
+            }
+            ActivateButton(sender);
+        }
+
+        private bool subjectSearchChoice = false; //false면 오름차순, ture면 내림차순 기본은 제목 오름차순으로 설정
+        private void btn_subjectSearch_Click(object sender, EventArgs e)
+        {
+            if (subjectSearchChoice == true)
+            {
+                DataSet ds = new DataSet();
+
+                SqlConnection sqlcon = new SqlConnection(strconn);
+                sqlcon.Open();
+
+                SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by SUBJECT DESC, W_NUM DESC;", sqlcon);
+                adpt.Fill(ds);
+
+                dataGridView1.Rows.Clear();
+                foreach (DataRow viewData in ds.Tables[0].Rows)
+                {
+                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
+                    int pay = (int)viewData["PAY"];
+                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
+                }
+
+
+                sqlcon.Close();
+                subjectSearchChoice = false;
+            }
+            else
+            {
+                DataSet ds = new DataSet();
+
+                SqlConnection sqlcon = new SqlConnection(strconn);
+                sqlcon.Open();
+
+                SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by SUBJECT ASC, W_NUM DESC;", sqlcon);
+                adpt.Fill(ds);
+
+                dataGridView1.Rows.Clear();
+                foreach (DataRow viewData in ds.Tables[0].Rows)
+                {
+                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
+                    int pay = (int)viewData["PAY"];
+                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
+                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
+                }
+
+
+                sqlcon.Close();
+                subjectSearchChoice = true;
+            }
+            ActivateButton(sender);
+        }
+
+        private void tb_search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                selectData(tb_search.Text);
+                tb_search.Text = "";
+            }
+        }
+
+        private void tb_search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //엔터시 띵띵 소리나는거 제거
+            if(e.KeyChar == (char)Keys.Return)
+            {
+                e.Handled = true;
+                
+            }
         }
     }
 }
