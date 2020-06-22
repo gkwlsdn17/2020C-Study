@@ -45,7 +45,9 @@ namespace Login.Recruit
 
             DateTime w_start_time = (DateTime)dr["W_START_TIME"];
             DateTime w_end_time = (DateTime)dr["W_END_TIME"];
-            lb_time.Text = w_start_time.ToString("HH:mm")+ " ~ "+w_end_time.ToString("HH:mm");
+            string start_time = w_start_time.ToString("MM") + "월 " + w_start_time.ToString("dd") + "일 " + w_start_time.ToString("HH:mm");
+            string end_time = w_end_time.ToString("MM") + "월 " + w_end_time.ToString("dd") + "일 " + w_end_time.ToString("HH:mm");
+            lb_time.Text = start_time+ " ~ "+end_time;
 
             lb_w_place.Text = (string)dr["W_PLACE"];
             lb_w_content.Text = (string)dr["W_CONTENT"];

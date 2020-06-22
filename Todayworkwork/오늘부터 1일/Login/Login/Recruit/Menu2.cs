@@ -78,13 +78,8 @@ namespace Login
             adpt.Fill(ds);
 
             dataGridView1.Rows.Clear();
-            foreach (DataRow viewData in ds.Tables[0].Rows)
-            {
-                DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
-                int pay = (int)viewData["PAY"];
-                string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
-                dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
-            }
+            gridViewSetting(ds.Tables[0]);
+            
             sqlcon.Close();
 
         }
@@ -107,15 +102,8 @@ namespace Login
                 adpt.Fill(ds);
 
                 dataGridView1.Rows.Clear();
-                foreach (DataRow viewData in ds.Tables[0].Rows)
-                {
-                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
-                    int pay = (int)viewData["PAY"];
-                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
-                }
-
-
+                gridViewSetting(ds.Tables[0]);
+                
                 sqlcon.Close();
             }
            
@@ -146,13 +134,7 @@ namespace Login
                 adpt.Fill(ds);
 
                 dataGridView1.Rows.Clear();
-                foreach (DataRow viewData in ds.Tables[0].Rows)
-                {
-                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
-                    int pay = (int)viewData["PAY"];
-                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
-                }
+                gridViewSetting(ds.Tables[0]);
 
 
                 sqlcon.Close();
@@ -169,13 +151,7 @@ namespace Login
                 adpt.Fill(ds);
 
                 dataGridView1.Rows.Clear();
-                foreach (DataRow viewData in ds.Tables[0].Rows)
-                {
-                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
-                    int pay = (int)viewData["PAY"];
-                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
-                }
+                gridViewSetting(ds.Tables[0]);
 
 
                 sqlcon.Close();
@@ -198,13 +174,7 @@ namespace Login
                 adpt.Fill(ds);
 
                 dataGridView1.Rows.Clear();
-                foreach (DataRow viewData in ds.Tables[0].Rows)
-                {
-                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
-                    int pay = (int)viewData["PAY"];
-                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
-                }
+                gridViewSetting(ds.Tables[0]);
 
 
                 sqlcon.Close();
@@ -221,13 +191,7 @@ namespace Login
                 adpt.Fill(ds);
 
                 dataGridView1.Rows.Clear();
-                foreach (DataRow viewData in ds.Tables[0].Rows)
-                {
-                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
-                    int pay = (int)viewData["PAY"];
-                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
-                }
+                gridViewSetting(ds.Tables[0]);
 
 
                 sqlcon.Close();
@@ -315,13 +279,7 @@ namespace Login
                 adpt.Fill(ds);
 
                 dataGridView1.Rows.Clear();
-                foreach (DataRow viewData in ds.Tables[0].Rows)
-                {
-                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
-                    int pay = (int)viewData["PAY"];
-                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
-                }
+                gridViewSetting(ds.Tables[0]);
 
 
                 sqlcon.Close();
@@ -338,13 +296,7 @@ namespace Login
                 adpt.Fill(ds);
 
                 dataGridView1.Rows.Clear();
-                foreach (DataRow viewData in ds.Tables[0].Rows)
-                {
-                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
-                    int pay = (int)viewData["PAY"];
-                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
-                }
+                gridViewSetting(ds.Tables[0]);
 
 
                 sqlcon.Close();
@@ -367,13 +319,7 @@ namespace Login
                 adpt.Fill(ds);
 
                 dataGridView1.Rows.Clear();
-                foreach (DataRow viewData in ds.Tables[0].Rows)
-                {
-                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
-                    int pay = (int)viewData["PAY"];
-                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
-                }
+                gridViewSetting(ds.Tables[0]);
 
 
                 sqlcon.Close();
@@ -390,13 +336,7 @@ namespace Login
                 adpt.Fill(ds);
 
                 dataGridView1.Rows.Clear();
-                foreach (DataRow viewData in ds.Tables[0].Rows)
-                {
-                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
-                    int pay = (int)viewData["PAY"];
-                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
-                }
+                gridViewSetting(ds.Tables[0]);
 
 
                 sqlcon.Close();
@@ -419,13 +359,7 @@ namespace Login
                 adpt.Fill(ds);
 
                 dataGridView1.Rows.Clear();
-                foreach (DataRow viewData in ds.Tables[0].Rows)
-                {
-                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
-                    int pay = (int)viewData["PAY"];
-                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
-                }
+                gridViewSetting(ds.Tables[0]);
 
 
                 sqlcon.Close();
@@ -442,14 +376,7 @@ namespace Login
                 adpt.Fill(ds);
 
                 dataGridView1.Rows.Clear();
-                foreach (DataRow viewData in ds.Tables[0].Rows)
-                {
-                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
-                    int pay = (int)viewData["PAY"];
-                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
-                }
-
+                gridViewSetting(ds.Tables[0]);
 
                 sqlcon.Close();
                 w_end_timeSearchChoice = true;
@@ -471,14 +398,7 @@ namespace Login
                 adpt.Fill(ds);
 
                 dataGridView1.Rows.Clear();
-                foreach (DataRow viewData in ds.Tables[0].Rows)
-                {
-                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
-                    int pay = (int)viewData["PAY"];
-                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
-                }
-
+                gridViewSetting(ds.Tables[0]);
 
                 sqlcon.Close();
                 subjectSearchChoice = false;
@@ -494,21 +414,24 @@ namespace Login
                 adpt.Fill(ds);
 
                 dataGridView1.Rows.Clear();
-                foreach (DataRow viewData in ds.Tables[0].Rows)
-                {
-                    DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
-                    int pay = (int)viewData["PAY"];
-                    string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
-                    dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time.ToString("MM-dd-(ddd)"), viewData["COUNT"]);
-                }
-
+                gridViewSetting(ds.Tables[0]);
 
                 sqlcon.Close();
                 subjectSearchChoice = true;
             }
             ActivateButton(sender);
         }
-
+        private void gridViewSetting(DataTable table)
+        {
+            foreach (DataRow viewData in table.Rows)
+            {
+                DateTime w_end_time = (DateTime)viewData["W_END_TIME"];
+                string w_end_time_convert = w_end_time.ToString("MM") + "/" + w_end_time.ToString("dd") + "(" + w_end_time.ToString("ddd") + ")";
+                int pay = (int)viewData["PAY"];
+                string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
+                dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time_convert, viewData["COUNT"]);
+            }
+        }
         private void tb_search_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
