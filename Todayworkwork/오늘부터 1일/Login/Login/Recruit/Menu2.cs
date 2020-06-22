@@ -34,6 +34,7 @@ namespace Login
             
             
         }
+        /*
         public static void setFont(Control.ControlCollection controls,Font font)
         {
             foreach (Control childControl in controls)
@@ -45,15 +46,16 @@ namespace Login
                 }
             }
         }
+        */
         private void Menu2_Load(object sender, EventArgs e)
         {
-            
+            /*
             PrivateFontCollection privateFonts = new PrivateFontCollection();
-            privateFonts.AddFontFile("NanumBarunGothic.ttf");
+            privateFonts.AddFontFile("hy강m-yoond1004.ttf");
             Font font = new Font(privateFonts.Families[0], 12f);
             setFont(Controls,font);
-            
-
+            */
+            dataGridView1.Font = new Font("HY강M", 10, FontStyle.Regular);
             //검색창 테두리 둥글게
             IntPtr tbRound = CreateRoundRectRgn(0, 0, panel_search.Width, panel_search.Height, 15, 15);
             int i = SetWindowRgn(panel_search.Handle, tbRound, true);

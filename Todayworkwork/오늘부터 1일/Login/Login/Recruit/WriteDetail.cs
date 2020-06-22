@@ -52,7 +52,7 @@ namespace Login.Recruit
             lb_w_place.Text = (string)dr["W_PLACE"];
             lb_w_content.Text = (string)dr["W_CONTENT"];
 
-            lb_id.Text = (string)dr["ID"];
+            lb_id.Text = (string)dr["NAME"];
         }
     }
 }

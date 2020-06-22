@@ -12,11 +12,20 @@ namespace Login
 {
     public partial class MainForm : Form
     {
+        //마우스로 창 이동
+        bool On;
+        Point Pos;
+
         private Button currentButton = null;
+        
         public MainForm()
         {
             InitializeComponent();
+            Timer timer = new Timer();
+            timer.Tick += new EventHandler(timer1_Tick);
+            timer.Start();
         }
+        
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
@@ -61,7 +70,37 @@ namespace Login
             menu41.BringToFront();
             ActivateButton(btn_menu4);
         }
-        
-        
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            On = true;
+            Pos.X = e.X;
+            Pos.Y = e.Y;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (On == true)
+            {
+                this.SetDesktopLocation(MousePosition.X - Pos.X, MousePosition.Y - Pos.Y);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            On = false;
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime time = DateTime.Now;
+            string timeView = time.ToString("yyyy") + "년 " + time.ToString("MM") + "월 " + time.ToString("dd") + "일 " + "(" + time.ToString("ddd") + ") " + time.ToString("hh") + "시" + time.ToString("mm") + "분" + time.ToString("ss") + "초";
+            lb_date.Text = timeView;
+        }
     }
 }

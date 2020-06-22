@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,6 +39,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_menu1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_exit = new System.Windows.Forms.Button();
+            this.lb_date = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menu41 = new Login.Menu4();
             this.menu31 = new Login.Menu3();
             this.menu21 = new Login.Menu2();
@@ -49,6 +50,7 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -63,60 +65,22 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(995, 635);
             this.panel4.TabIndex = 7;
-            // 
-            // button7
-            // 
-            this.button7.AutoSize = true;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(901, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(82, 26);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "고객센터";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.AutoSize = true;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(698, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(82, 26);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "공지사항";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.AutoSize = true;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(786, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(114, 26);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "자주하는질문";
-            this.button6.UseVisualStyleBackColor = true;
+            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel3.Controls.Add(this.button6);
-            this.panel3.Controls.Add(this.button7);
-            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.lb_date);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(189, 734);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(995, 28);
             this.panel3.TabIndex = 6;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // pictureBox1
             // 
@@ -129,11 +93,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(76, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 19);
+            this.label1.Size = new System.Drawing.Size(43, 21);
             this.label1.TabIndex = 3;
             this.label1.Text = "Lee";
             // 
@@ -141,7 +105,7 @@
             // 
             this.btn_menu4.FlatAppearance.BorderSize = 0;
             this.btn_menu4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_menu4.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_menu4.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_menu4.ForeColor = System.Drawing.Color.White;
             this.btn_menu4.Location = new System.Drawing.Point(3, 477);
             this.btn_menu4.Name = "btn_menu4";
@@ -155,7 +119,7 @@
             // 
             this.btn_menu3.FlatAppearance.BorderSize = 0;
             this.btn_menu3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_menu3.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_menu3.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_menu3.ForeColor = System.Drawing.Color.White;
             this.btn_menu3.Location = new System.Drawing.Point(3, 365);
             this.btn_menu3.Name = "btn_menu3";
@@ -169,7 +133,7 @@
             // 
             this.btn_menu2.FlatAppearance.BorderSize = 0;
             this.btn_menu2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_menu2.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_menu2.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_menu2.ForeColor = System.Drawing.Color.White;
             this.btn_menu2.Location = new System.Drawing.Point(3, 251);
             this.btn_menu2.Name = "btn_menu2";
@@ -193,12 +157,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(189, 663);
             this.panel2.TabIndex = 5;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // btn_menu1
             // 
             this.btn_menu1.FlatAppearance.BorderSize = 0;
             this.btn_menu1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_menu1.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_menu1.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_menu1.ForeColor = System.Drawing.Color.White;
             this.btn_menu1.Location = new System.Drawing.Point(3, 141);
             this.btn_menu1.Name = "btn_menu1";
@@ -211,11 +178,40 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
+            this.panel1.Controls.Add(this.btn_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1184, 99);
             this.panel1.TabIndex = 4;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // btn_exit
+            // 
+            this.btn_exit.Location = new System.Drawing.Point(1090, 12);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(81, 68);
+            this.btn_exit.TabIndex = 0;
+            this.btn_exit.Text = "종료";
+            this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            // 
+            // lb_date
+            // 
+            this.lb_date.AutoSize = true;
+            this.lb_date.ForeColor = System.Drawing.Color.White;
+            this.lb_date.Location = new System.Drawing.Point(787, 9);
+            this.lb_date.Name = "lb_date";
+            this.lb_date.Size = new System.Drawing.Size(29, 12);
+            this.lb_date.TabIndex = 0;
+            this.lb_date.Text = "날짜";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // menu41
             // 
@@ -224,6 +220,9 @@
             this.menu41.Name = "menu41";
             this.menu41.Size = new System.Drawing.Size(995, 635);
             this.menu41.TabIndex = 3;
+            this.menu41.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.menu41.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.menu41.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // menu31
             // 
@@ -232,14 +231,21 @@
             this.menu31.Name = "menu31";
             this.menu31.Size = new System.Drawing.Size(995, 635);
             this.menu31.TabIndex = 2;
+            this.menu31.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.menu31.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.menu31.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // menu21
             // 
+            this.menu21.AutoScroll = true;
             this.menu21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menu21.Location = new System.Drawing.Point(0, 0);
             this.menu21.Name = "menu21";
             this.menu21.Size = new System.Drawing.Size(995, 635);
             this.menu21.TabIndex = 1;
+            this.menu21.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.menu21.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.menu21.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // menu11
             // 
@@ -248,6 +254,9 @@
             this.menu11.Name = "menu11";
             this.menu11.Size = new System.Drawing.Size(995, 635);
             this.menu11.TabIndex = 0;
+            this.menu11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.menu11.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.menu11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // MainForm
             // 
@@ -258,6 +267,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.panel4.ResumeLayout(false);
@@ -266,6 +276,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -273,9 +284,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
@@ -289,5 +297,8 @@
         private Menu3 menu31;
         private Menu2 menu21;
         private Menu1 menu11;
+        private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.Label lb_date;
+        private System.Windows.Forms.Timer timer1;
     }
 }

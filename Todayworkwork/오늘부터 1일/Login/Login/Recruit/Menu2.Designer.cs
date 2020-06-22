@@ -90,12 +90,12 @@
             // 
             this.tb_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
             this.tb_search.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_search.Font = new System.Drawing.Font("굴림", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tb_search.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tb_search.ForeColor = System.Drawing.Color.White;
             this.tb_search.Location = new System.Drawing.Point(96, 22);
             this.tb_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_search.Name = "tb_search";
-            this.tb_search.Size = new System.Drawing.Size(621, 31);
+            this.tb_search.Size = new System.Drawing.Size(621, 14);
             this.tb_search.TabIndex = 0;
             this.tb_search.Text = "검색 할 내용을 입력하세요";
             this.tb_search.Click += new System.EventHandler(this.tb_search_Click);
@@ -197,6 +197,7 @@
             this.btn_allSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
             this.btn_allSearch.FlatAppearance.BorderSize = 0;
             this.btn_allSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_allSearch.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_allSearch.ForeColor = System.Drawing.Color.White;
             this.btn_allSearch.Location = new System.Drawing.Point(74, 94);
             this.btn_allSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -212,6 +213,7 @@
             this.btn_comSearch.BackColor = System.Drawing.Color.White;
             this.btn_comSearch.FlatAppearance.BorderSize = 0;
             this.btn_comSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_comSearch.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_comSearch.ForeColor = System.Drawing.Color.Gray;
             this.btn_comSearch.Location = new System.Drawing.Point(172, 94);
             this.btn_comSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -227,6 +229,7 @@
             this.btn_subjectSearch.BackColor = System.Drawing.Color.White;
             this.btn_subjectSearch.FlatAppearance.BorderSize = 0;
             this.btn_subjectSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_subjectSearch.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_subjectSearch.ForeColor = System.Drawing.Color.Gray;
             this.btn_subjectSearch.Location = new System.Drawing.Point(272, 94);
             this.btn_subjectSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -242,6 +245,7 @@
             this.btn_countSearch.BackColor = System.Drawing.Color.White;
             this.btn_countSearch.FlatAppearance.BorderSize = 0;
             this.btn_countSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_countSearch.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_countSearch.ForeColor = System.Drawing.Color.Gray;
             this.btn_countSearch.Location = new System.Drawing.Point(668, 94);
             this.btn_countSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -255,77 +259,77 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("굴림", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            this.label1.Location = new System.Drawing.Point(2, 7);
+            this.label1.Location = new System.Drawing.Point(2, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 22);
+            this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 3;
             this.label1.Text = "글번호";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            this.label2.Location = new System.Drawing.Point(104, 7);
+            this.label2.Location = new System.Drawing.Point(104, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 22);
+            this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 3;
             this.label2.Text = "기업명";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            this.label3.Location = new System.Drawing.Point(292, 7);
+            this.label3.Location = new System.Drawing.Point(292, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 22);
+            this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 3;
             this.label3.Text = "제목";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            this.label4.Location = new System.Drawing.Point(525, 7);
+            this.label4.Location = new System.Drawing.Point(525, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 22);
+            this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 3;
             this.label4.Text = "급여";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("굴림", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            this.label5.Location = new System.Drawing.Point(649, 7);
+            this.label5.Location = new System.Drawing.Point(643, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 22);
+            this.label5.Size = new System.Drawing.Size(41, 12);
             this.label5.TabIndex = 3;
             this.label5.Text = "근무지";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("굴림", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            this.label6.Location = new System.Drawing.Point(773, 7);
+            this.label6.Location = new System.Drawing.Point(775, 10);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 22);
+            this.label6.Size = new System.Drawing.Size(41, 12);
             this.label6.TabIndex = 3;
             this.label6.Text = "마감일";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("굴림", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            this.label7.Location = new System.Drawing.Point(859, 7);
+            this.label7.Location = new System.Drawing.Point(859, 10);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 22);
+            this.label7.Size = new System.Drawing.Size(41, 12);
             this.label7.TabIndex = 3;
             this.label7.Text = "조회수";
             // 
@@ -349,6 +353,7 @@
             this.btn_paySearch.BackColor = System.Drawing.Color.White;
             this.btn_paySearch.FlatAppearance.BorderSize = 0;
             this.btn_paySearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_paySearch.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_paySearch.ForeColor = System.Drawing.Color.Gray;
             this.btn_paySearch.Location = new System.Drawing.Point(371, 94);
             this.btn_paySearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -364,6 +369,7 @@
             this.btn_w_placeSearch.BackColor = System.Drawing.Color.White;
             this.btn_w_placeSearch.FlatAppearance.BorderSize = 0;
             this.btn_w_placeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_w_placeSearch.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_w_placeSearch.ForeColor = System.Drawing.Color.Gray;
             this.btn_w_placeSearch.Location = new System.Drawing.Point(470, 94);
             this.btn_w_placeSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -379,6 +385,7 @@
             this.btn_w_end_timeSearch.BackColor = System.Drawing.Color.White;
             this.btn_w_end_timeSearch.FlatAppearance.BorderSize = 0;
             this.btn_w_end_timeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_w_end_timeSearch.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_w_end_timeSearch.ForeColor = System.Drawing.Color.Gray;
             this.btn_w_end_timeSearch.Location = new System.Drawing.Point(569, 94);
             this.btn_w_end_timeSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
