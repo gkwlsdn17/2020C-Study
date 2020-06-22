@@ -49,8 +49,8 @@
             this.lb_w_content = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lb_line2 = new System.Windows.Forms.Label();
-            this.lb_line1 = new System.Windows.Forms.Label();
             this.lb_id = new System.Windows.Forms.Label();
+            this.lb_line1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -80,142 +80,157 @@
             // lb_subject
             // 
             this.lb_subject.AutoSize = true;
-            this.lb_subject.Location = new System.Drawing.Point(56, 18);
+            this.lb_subject.Font = new System.Drawing.Font("HY강M", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lb_subject.Location = new System.Drawing.Point(52, 12);
             this.lb_subject.Name = "lb_subject";
-            this.lb_subject.Size = new System.Drawing.Size(121, 30);
+            this.lb_subject.Size = new System.Drawing.Size(140, 38);
             this.lb_subject.TabIndex = 0;
             this.lb_subject.Text = "subject";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
             this.label1.Location = new System.Drawing.Point(88, 181);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 15);
+            this.label1.Size = new System.Drawing.Size(59, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "기업명";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
             this.label2.Location = new System.Drawing.Point(617, 181);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 15);
+            this.label2.Size = new System.Drawing.Size(42, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "직종";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
             this.label3.Location = new System.Drawing.Point(90, 228);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 15);
+            this.label3.Size = new System.Drawing.Size(42, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "급여";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.Gray;
             this.label4.Location = new System.Drawing.Point(88, 278);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 15);
+            this.label4.Size = new System.Drawing.Size(76, 17);
             this.label4.TabIndex = 0;
             this.label4.Text = "근무시간";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.Color.Gray;
             this.label5.Location = new System.Drawing.Point(88, 323);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 15);
+            this.label5.Size = new System.Drawing.Size(59, 17);
             this.label5.TabIndex = 0;
             this.label5.Text = "근무지";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.Gray;
             this.label6.Location = new System.Drawing.Point(617, 228);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 15);
+            this.label6.Size = new System.Drawing.Size(76, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "작성일시";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.Gray;
             this.label7.Location = new System.Drawing.Point(617, 278);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 15);
+            this.label7.Size = new System.Drawing.Size(76, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "모집마감";
             // 
             // lb_com_name
             // 
             this.lb_com_name.AutoSize = true;
+            this.lb_com_name.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lb_com_name.Location = new System.Drawing.Point(208, 181);
             this.lb_com_name.Name = "lb_com_name";
-            this.lb_com_name.Size = new System.Drawing.Size(82, 15);
+            this.lb_com_name.Size = new System.Drawing.Size(93, 17);
             this.lb_com_name.TabIndex = 0;
             this.lb_com_name.Text = "기업명내용";
             // 
             // lb_pay
             // 
             this.lb_pay.AutoSize = true;
+            this.lb_pay.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lb_pay.Location = new System.Drawing.Point(208, 228);
             this.lb_pay.Name = "lb_pay";
-            this.lb_pay.Size = new System.Drawing.Size(67, 15);
+            this.lb_pay.Size = new System.Drawing.Size(76, 17);
             this.lb_pay.TabIndex = 0;
             this.lb_pay.Text = "급여내용";
             // 
             // lb_time
             // 
             this.lb_time.AutoSize = true;
+            this.lb_time.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lb_time.Location = new System.Drawing.Point(208, 278);
             this.lb_time.Name = "lb_time";
-            this.lb_time.Size = new System.Drawing.Size(97, 15);
+            this.lb_time.Size = new System.Drawing.Size(110, 17);
             this.lb_time.TabIndex = 0;
             this.lb_time.Text = "근무시간내용";
             // 
             // lb_w_place
             // 
             this.lb_w_place.AutoSize = true;
+            this.lb_w_place.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lb_w_place.Location = new System.Drawing.Point(208, 323);
             this.lb_w_place.Name = "lb_w_place";
-            this.lb_w_place.Size = new System.Drawing.Size(82, 15);
+            this.lb_w_place.Size = new System.Drawing.Size(93, 17);
             this.lb_w_place.TabIndex = 0;
             this.lb_w_place.Text = "근무지내용";
             // 
             // lb_field
             // 
             this.lb_field.AutoSize = true;
+            this.lb_field.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lb_field.Location = new System.Drawing.Point(742, 181);
             this.lb_field.Name = "lb_field";
-            this.lb_field.Size = new System.Drawing.Size(67, 15);
+            this.lb_field.Size = new System.Drawing.Size(76, 17);
             this.lb_field.TabIndex = 0;
             this.lb_field.Text = "직종내용";
             // 
             // lb_w_date
             // 
             this.lb_w_date.AutoSize = true;
+            this.lb_w_date.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lb_w_date.Location = new System.Drawing.Point(742, 228);
             this.lb_w_date.Name = "lb_w_date";
-            this.lb_w_date.Size = new System.Drawing.Size(97, 15);
+            this.lb_w_date.Size = new System.Drawing.Size(110, 17);
             this.lb_w_date.TabIndex = 0;
             this.lb_w_date.Text = "작성일시내용";
             // 
             // lb_period
             // 
             this.lb_period.AutoSize = true;
+            this.lb_period.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lb_period.Location = new System.Drawing.Point(742, 278);
             this.lb_period.Name = "lb_period";
-            this.lb_period.Size = new System.Drawing.Size(97, 15);
+            this.lb_period.Size = new System.Drawing.Size(110, 17);
             this.lb_period.TabIndex = 0;
             this.lb_period.Text = "모집마감내용";
             // 
@@ -223,9 +238,10 @@
             // 
             this.lb_w_content.AutoEllipsis = true;
             this.lb_w_content.AutoSize = true;
+            this.lb_w_content.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lb_w_content.Location = new System.Drawing.Point(88, 437);
             this.lb_w_content.Name = "lb_w_content";
-            this.lb_w_content.Size = new System.Drawing.Size(37, 15);
+            this.lb_w_content.Size = new System.Drawing.Size(42, 17);
             this.lb_w_content.TabIndex = 0;
             this.lb_w_content.Text = "내용";
             // 
@@ -255,7 +271,7 @@
             this.panel3.Controls.Add(this.lb_time);
             this.panel3.Location = new System.Drawing.Point(44, 28);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1073, 641);
+            this.panel3.Size = new System.Drawing.Size(1076, 641);
             this.panel3.TabIndex = 3;
             // 
             // lb_line2
@@ -266,6 +282,16 @@
             this.lb_line2.Size = new System.Drawing.Size(1007, 2);
             this.lb_line2.TabIndex = 2;
             // 
+            // lb_id
+            // 
+            this.lb_id.AutoSize = true;
+            this.lb_id.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lb_id.Location = new System.Drawing.Point(742, 325);
+            this.lb_id.Name = "lb_id";
+            this.lb_id.Size = new System.Drawing.Size(93, 17);
+            this.lb_id.TabIndex = 0;
+            this.lb_id.Text = "작성자내용";
+            // 
             // lb_line1
             // 
             this.lb_line1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -274,22 +300,14 @@
             this.lb_line1.Size = new System.Drawing.Size(1007, 2);
             this.lb_line1.TabIndex = 2;
             // 
-            // lb_id
-            // 
-            this.lb_id.AutoSize = true;
-            this.lb_id.Location = new System.Drawing.Point(742, 325);
-            this.lb_id.Name = "lb_id";
-            this.lb_id.Size = new System.Drawing.Size(82, 15);
-            this.lb_id.TabIndex = 0;
-            this.lb_id.Text = "작성자내용";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.ForeColor = System.Drawing.Color.Gray;
             this.label9.Location = new System.Drawing.Point(617, 325);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 15);
+            this.label9.Size = new System.Drawing.Size(59, 17);
             this.label9.TabIndex = 0;
             this.label9.Text = "작성자";
             // 
@@ -297,9 +315,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1119, 747);
+            this.ClientSize = new System.Drawing.Size(1119, 746);
             this.Controls.Add(this.panel3);
             this.Name = "WriteDetail";
             this.Text = "글정보";

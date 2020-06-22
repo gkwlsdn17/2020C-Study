@@ -31,8 +31,6 @@ namespace Login
         public Menu2()
         {
             InitializeComponent();
-            
-            
         }
         /*
         public static void setFont(Control.ControlCollection controls,Font font)
@@ -49,6 +47,7 @@ namespace Login
         */
         private void Menu2_Load(object sender, EventArgs e)
         {
+            
             /*
             PrivateFontCollection privateFonts = new PrivateFontCollection();
             privateFonts.AddFontFile("hy강m-yoond1004.ttf");

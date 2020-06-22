@@ -18,7 +18,6 @@ namespace Login.Recruit
             InitializeComponent();
             dr = ds.Tables[0].Rows[0];
             
-
         }
         
 
@@ -53,6 +52,7 @@ namespace Login.Recruit
             lb_w_content.Text = (string)dr["W_CONTENT"];
 
             lb_id.Text = (string)dr["NAME"];
+
         }
     }
 }
