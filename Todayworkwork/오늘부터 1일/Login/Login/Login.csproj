@@ -126,6 +126,7 @@
     <EmbeddedResource Include="Recruit\WriteDetail.resx">
       <DependentUpon>WriteDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="NanumBarunGothic.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

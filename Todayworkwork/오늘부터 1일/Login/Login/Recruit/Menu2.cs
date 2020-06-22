@@ -34,8 +34,26 @@ namespace Login
             
             
         }
+        public static void setFont(Control.ControlCollection controls,Font font)
+        {
+            foreach (Control childControl in controls)
+            {
+                childControl.Font = font;
+                if (childControl.HasChildren)
+                {
+                    setFont(childControl.Controls, font);
+                }
+            }
+        }
         private void Menu2_Load(object sender, EventArgs e)
         {
+            
+            PrivateFontCollection privateFonts = new PrivateFontCollection();
+            privateFonts.AddFontFile("NanumBarunGothic.ttf");
+            Font font = new Font(privateFonts.Families[0], 12f);
+            setFont(Controls,font);
+            
+
             //검색창 테두리 둥글게
             IntPtr tbRound = CreateRoundRectRgn(0, 0, panel_search.Width, panel_search.Height, 15, 15);
             int i = SetWindowRgn(panel_search.Handle, tbRound, true);
@@ -47,6 +65,7 @@ namespace Login
 
             //목록 뿌리기
             selectData();
+
         }
         private void buttonInitSetting()
         {
@@ -97,6 +116,11 @@ namespace Login
                 sqlcon.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = "select * from RECRUIT where SUBJECT LIKE '%"+str+"%' or COM_NAME LIKE '%"+str+"%' order by SUBJECT ASC, COM_NAME DESC";
+                /*
+                cmd.CommandText = "select * from RECRUIT where SUBJECT LIKE '%@str1%' or COM_NAME LIKE '%@str2%' order by SUBJECT ASC, COM_NAME DESC";
+                cmd.Parameters.AddWithValue("@str1", str);
+                cmd.Parameters.AddWithValue("@str2", str);
+                */
                 cmd.Connection = sqlcon;
                 SqlDataAdapter adpt = new SqlDataAdapter(cmd.CommandText, sqlcon);
                 adpt.Fill(ds);
