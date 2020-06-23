@@ -18,7 +18,7 @@ namespace Login
 
         private Button currentButton = null;
         
-        public MainForm()
+        public MainForm(string id)
         {
             InitializeComponent();
             Timer timer = new Timer();

@@ -45,7 +45,7 @@
             // 
             this.lb_com_name.AutoSize = true;
             this.lb_com_name.Font = new System.Drawing.Font("HY강M", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_com_name.Location = new System.Drawing.Point(24, 14);
+            this.lb_com_name.Location = new System.Drawing.Point(36, 31);
             this.lb_com_name.Name = "lb_com_name";
             this.lb_com_name.Size = new System.Drawing.Size(79, 22);
             this.lb_com_name.TabIndex = 0;
@@ -53,10 +53,11 @@
             // 
             // lb_field
             // 
+            this.lb_field.AutoEllipsis = true;
             this.lb_field.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_field.Location = new System.Drawing.Point(26, 49);
+            this.lb_field.Location = new System.Drawing.Point(38, 66);
             this.lb_field.Name = "lb_field";
-            this.lb_field.Size = new System.Drawing.Size(127, 14);
+            this.lb_field.Size = new System.Drawing.Size(354, 17);
             this.lb_field.TabIndex = 0;
             this.lb_field.Text = "직종";
             // 
@@ -64,7 +65,7 @@
             // 
             this.lb_point.AutoSize = true;
             this.lb_point.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_point.Location = new System.Drawing.Point(209, 49);
+            this.lb_point.Location = new System.Drawing.Point(314, 95);
             this.lb_point.Name = "lb_point";
             this.lb_point.Size = new System.Drawing.Size(35, 14);
             this.lb_point.TabIndex = 0;
@@ -74,7 +75,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(159, 49);
+            this.label1.Location = new System.Drawing.Point(264, 95);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 14);
             this.label1.TabIndex = 1;
@@ -82,10 +83,11 @@
             // 
             // lb_com_addr
             // 
+            this.lb_com_addr.AutoEllipsis = true;
             this.lb_com_addr.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_com_addr.Location = new System.Drawing.Point(26, 124);
+            this.lb_com_addr.Location = new System.Drawing.Point(37, 150);
             this.lb_com_addr.Name = "lb_com_addr";
-            this.lb_com_addr.Size = new System.Drawing.Size(247, 19);
+            this.lb_com_addr.Size = new System.Drawing.Size(337, 29);
             this.lb_com_addr.TabIndex = 2;
             this.lb_com_addr.Text = "주소";
             // 
@@ -93,7 +95,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(26, 100);
+            this.label3.Location = new System.Drawing.Point(38, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 14);
             this.label3.TabIndex = 2;
@@ -103,7 +105,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(26, 75);
+            this.label4.Location = new System.Drawing.Point(38, 95);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 14);
             this.label4.TabIndex = 2;
@@ -113,7 +115,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(159, 75);
+            this.label5.Location = new System.Drawing.Point(264, 124);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 14);
             this.label5.TabIndex = 2;
@@ -122,16 +124,16 @@
             // lb_sales
             // 
             this.lb_sales.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_sales.Location = new System.Drawing.Point(64, 75);
+            this.lb_sales.Location = new System.Drawing.Point(76, 95);
             this.lb_sales.Name = "lb_sales";
-            this.lb_sales.Size = new System.Drawing.Size(89, 14);
+            this.lb_sales.Size = new System.Drawing.Size(193, 14);
             this.lb_sales.TabIndex = 3;
             this.lb_sales.Text = "금액";
             // 
             // lb_ap_count
             // 
             this.lb_ap_count.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_ap_count.Location = new System.Drawing.Point(209, 75);
+            this.lb_ap_count.Location = new System.Drawing.Point(314, 124);
             this.lb_ap_count.Name = "lb_ap_count";
             this.lb_ap_count.Size = new System.Drawing.Size(78, 14);
             this.lb_ap_count.TabIndex = 4;
@@ -141,7 +143,7 @@
             // 
             this.lb_com_tel.AutoSize = true;
             this.lb_com_tel.Font = new System.Drawing.Font("HY강M", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_com_tel.Location = new System.Drawing.Point(64, 100);
+            this.lb_com_tel.Location = new System.Drawing.Point(76, 124);
             this.lb_com_tel.Name = "lb_com_tel";
             this.lb_com_tel.Size = new System.Drawing.Size(63, 14);
             this.lb_com_tel.TabIndex = 5;
@@ -149,8 +151,7 @@
             // 
             // InfoItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lb_com_tel);
@@ -166,7 +167,7 @@
             this.Controls.Add(this.lb_com_name);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InfoItem";
-            this.Size = new System.Drawing.Size(290, 158);
+            this.Size = new System.Drawing.Size(430, 200);
             this.ResumeLayout(false);
             this.PerformLayout();
 

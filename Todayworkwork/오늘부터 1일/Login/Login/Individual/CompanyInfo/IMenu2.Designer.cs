@@ -43,6 +43,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(39, 106);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -96,6 +97,8 @@
             this.tb_search.TabIndex = 1;
             this.tb_search.Text = "검색 할 기업을 입력하세요";
             this.tb_search.Click += new System.EventHandler(this.tb_search_Click);
+            this.tb_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_search_KeyDown);
+            this.tb_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_search_KeyPress);
             // 
             // btn_search
             // 

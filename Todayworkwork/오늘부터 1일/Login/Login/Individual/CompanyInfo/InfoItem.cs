@@ -24,5 +24,7 @@ namespace Login.Individual.CompanyInfo
         public int lb_AP_COUNT { get { return int.Parse(lb_ap_count.Text); } set { lb_ap_count.Text = value.ToString()+" 명"; } }
         public string lb_COM_TEL { get { return lb_com_tel.Text; } set { lb_com_tel.Text = value; } }
         public string lb_COM_ADDR { get { return lb_com_addr.Text; } set { lb_com_addr.Text = value; } }
+
+        
     }
 }

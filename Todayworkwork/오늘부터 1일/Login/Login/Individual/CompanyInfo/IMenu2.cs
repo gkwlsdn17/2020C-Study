@@ -225,5 +225,35 @@ namespace Login
             sqlcon.Close();
         }
 
+        private void tb_search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                search_on = true;
+                search_keyword = tb_search.Text;
+
+                DataSet ds = new DataSet();
+                SqlConnection sqlcon = new SqlConnection(strconn);
+                sqlcon.Open();
+
+                SqlDataAdapter adpt = new SqlDataAdapter("select * from COM_INFO where COM_NAME LIKE '%" + search_keyword + "%'", sqlcon);
+                adpt.Fill(ds);
+                count = ds.Tables[0].Rows.Count;
+                infoItemView(ds);
+                sqlcon.Close();
+
+                tb_search.Text = "";
+            }
+        }
+
+        private void tb_search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //엔터시 띵띵 소리나는거 제거
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                e.Handled = true;
+
+            }
+        }
     }
 }
