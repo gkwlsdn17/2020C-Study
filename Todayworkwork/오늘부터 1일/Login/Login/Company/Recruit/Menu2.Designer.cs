@@ -225,7 +225,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("HY강M", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            this.label4.Location = new System.Drawing.Point(600, 12);
+            this.label4.Location = new System.Drawing.Point(646, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 3;
@@ -236,7 +236,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("HY강M", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            this.label5.Location = new System.Drawing.Point(735, 12);
+            this.label5.Location = new System.Drawing.Point(781, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 20);
             this.label5.TabIndex = 3;
@@ -347,7 +347,7 @@
             // 
             // SUBJECT
             // 
-            this.SUBJECT.FillWeight = 130F;
+            this.SUBJECT.FillWeight = 150F;
             this.SUBJECT.HeaderText = "제목";
             this.SUBJECT.MinimumWidth = 6;
             this.SUBJECT.Name = "SUBJECT";
@@ -363,7 +363,7 @@
             // 
             // W_PLACE
             // 
-            this.W_PLACE.FillWeight = 70F;
+            this.W_PLACE.FillWeight = 50F;
             this.W_PLACE.HeaderText = "근무지";
             this.W_PLACE.MinimumWidth = 6;
             this.W_PLACE.Name = "W_PLACE";

@@ -9,15 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Login.Individual.CompanyInfo;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace Login
 {
     public partial class IMenu2 : UserControl
     {
+        private Button currentButton;
         string strconn = "Data Source=munggu.iptime.org,11113;Initial Catalog=TodayWorkWork;Persist Security Info=True;User ID=sa;Password=8765432!";
         int count;
         string search_keyword;
         bool search_on = false; //검색한 내용만 정렬할 때 확인용
+
+        //컨트롤 둥글게 만들기 위해 참조
+        [DllImport("gdi32.dll")]
+        private static extern IntPtr CreateRoundRectRgn(int x1, int y1, int x2, int y2, int cx, int cy);
+
+        [DllImport("user32.dll")]
+        private static extern int SetWindowRgn(IntPtr hWnd, IntPtr hRgn, bool bRedraw);
 
         public IMenu2()
         {
@@ -64,8 +73,45 @@ namespace Login
             count = ds.Tables[0].Rows.Count;
             infoItemView(ds);
             sqlcon.Close();
-        }
 
+            //검색창 테두리 둥글게
+            IntPtr tbRound = CreateRoundRectRgn(0, 0, panel_search.Width, panel_search.Height, 15, 15);
+            int i = SetWindowRgn(panel_search.Handle, tbRound, true);
+            //정렬버튼 테두리 둥글게
+            buttonInitSetting();
+            this.Refresh();
+            ActivateButton(btn_all);
+
+            flowLayoutPanel1.Font = new Font("HY강M", 10, FontStyle.Regular);
+
+        }
+        private void buttonInitSetting()
+        {
+            //정렬버튼 테두리 둥글게
+            IntPtr btnAllSearchRound = CreateRoundRectRgn(0, 0, btn_all.Width, btn_all.Height, 15, 15);
+            int i2 = SetWindowRgn(btn_all.Handle, btnAllSearchRound, true);
+            IntPtr btn_comSearchRound = CreateRoundRectRgn(0, 0, btn_seq_letter.Width, btn_seq_letter.Height, 15, 15);
+            int i3 = SetWindowRgn(btn_seq_letter.Handle, btn_comSearchRound, true);
+            IntPtr btn_pointSearchRound = CreateRoundRectRgn(0, 0, btn_seq_point.Width, btn_seq_point.Height, 15, 15);
+            int i4 = SetWindowRgn(btn_seq_point.Handle, btn_pointSearchRound, true);
+            IntPtr btn_applySearchRound = CreateRoundRectRgn(0, 0, btn_seq_apply.Width, btn_seq_apply.Height, 15, 15);
+            int i5 = SetWindowRgn(btn_seq_apply.Handle, btn_applySearchRound, true);
+
+        }
+        private void ActivateButton(object btnSender)
+        {
+            if (btnSender != null)
+            {
+                if (currentButton != null)
+                {
+                    currentButton.BackColor = System.Drawing.Color.White;
+                    currentButton.ForeColor = System.Drawing.Color.Gray;
+                }
+                currentButton = (Button)btnSender;
+                currentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
+                currentButton.ForeColor = System.Drawing.Color.White;
+            }
+        }
         private void btn_search_Click(object sender, EventArgs e)
         {
             search_keyword = tb_search.Text;
@@ -84,6 +130,7 @@ namespace Login
 
         private void btn_all_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender);
             search_on = false;
             DataSet ds = new DataSet();
             SqlConnection sqlcon = new SqlConnection(strconn);
@@ -109,6 +156,7 @@ namespace Login
         private bool seq_letter_asc = true; //true면 글자순 오름차순, false면 글자수 내림차순, 기본 오름차순 셋팅
         private void btn_seq_letter_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender);
             DataSet ds = new DataSet();
             SqlConnection sqlcon = new SqlConnection(strconn);
             sqlcon.Open();
@@ -149,6 +197,7 @@ namespace Login
         private bool seq_point_asc = false; //true면 평점 오름차순, false면 평점 내림차순,기본 내림차순 셋팅
         private void btn_seq_point_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender);
             DataSet ds = new DataSet();
             SqlConnection sqlcon = new SqlConnection(strconn);
             sqlcon.Open();
@@ -188,6 +237,7 @@ namespace Login
         private bool seq_apply_asc = false; //true면 지원자수 오름차순, false면 지원자수 내림차순, 기본 지원자수 내림차순 셋팅
         private void btn_seq_apply_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender);
             DataSet ds = new DataSet();
             SqlConnection sqlcon = new SqlConnection(strconn);
             sqlcon.Open();

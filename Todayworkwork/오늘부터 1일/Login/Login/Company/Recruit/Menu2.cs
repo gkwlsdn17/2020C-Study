@@ -72,6 +72,20 @@ namespace Login
             int i8 = SetWindowRgn(btn_w_end_timeSearch.Handle, btn_w_end_timeSearchRound, true);
 
         }
+        private void ActivateButton(object btnSender)
+        {
+            if (btnSender != null)
+            {
+                if (currentButton != null)
+                {
+                    currentButton.BackColor = System.Drawing.Color.White;
+                    currentButton.ForeColor = System.Drawing.Color.Gray;
+                }
+                currentButton = (Button)btnSender;
+                currentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
+                currentButton.ForeColor = System.Drawing.Color.White;
+            }
+        }
         private void selectData()
         {
 
@@ -222,26 +236,7 @@ namespace Login
             sqlcon.Close();
             ActivateButton(sender);
         }
-        private void ActivateButton(object btnSender)
-        {
-            
-            if (btnSender != null)
-            {
-                if (currentButton != null)
-                {
-                    currentButton.BackColor = System.Drawing.Color.White;
-                    currentButton.ForeColor = System.Drawing.Color.Gray;
-
-
-                }
-
-                currentButton = (Button)btnSender;
-                currentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-                currentButton.ForeColor = System.Drawing.Color.White;
-
-
-            }
-        }
+        
         private bool firstClick = false; //맨 처음 검색박스 클릭 시 안내 글자 사라짐
         private void tb_search_Click(object sender, EventArgs e)
         {
@@ -467,7 +462,17 @@ namespace Login
                 string w_end_time_convert = w_end_time.ToString("MM") + "/" + w_end_time.ToString("dd") + "(" + w_end_time.ToString("ddd") + ")";
                 int pay = (int)viewData["PAY"];
                 string pay_convert = string.Format("{0}", pay.ToString("#,##0")) + " 원";
-                dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), viewData["W_PLACE"], w_end_time_convert, viewData["COUNT"]);
+                string addr_convert = viewData["W_PLACE"].ToString();
+                string[] addr_split = addr_convert.Split(' ');
+                if (addr_split.Length < 2)
+                {
+                    addr_convert = addr_split[0];
+                }
+                else
+                {
+                    addr_convert = addr_split[0] + " " + addr_split[1];
+                }
+                dataGridView1.Rows.Add(viewData["W_NUM"], viewData["COM_NAME"], viewData["SUBJECT"], pay_convert.ToString(), addr_convert, w_end_time_convert, viewData["COUNT"]);
             }
         }
         private void tb_search_KeyDown(object sender, KeyEventArgs e)
