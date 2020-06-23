@@ -7,17 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
+using MaterialSkin;
 
 namespace oraWinForm
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MaterialForm
     {
         DbManager db = DbManager.getInstance();
         string name; int age; string addr; bool check=false;
         public Form1()
         {
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue400, Primary.Blue500,
+                Primary.Blue500, Accent.LightBlue200,
+                TextShade.WHITE
+            );
             InitializeComponent();
             DbManager.getInstance().dbConnection();
+            // Create a material theme manager and add the form to manage (this)
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

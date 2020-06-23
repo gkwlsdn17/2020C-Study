@@ -20,10 +20,10 @@ namespace oraWinForm
         }
         public void onSendData(object sender, EventArgs e)
         {
-            string name = textBox1.Text;
+            string name = tb_name.Text;
             int age;
-            int.TryParse(textBox2.Text,out age);
-            string addr = textBox3.Text;
+            int.TryParse(tb_age.Text,out age);
+            string addr = tb_addr.Text;
             onSubFormSendEvent(name, age, addr);
             Close();
         }

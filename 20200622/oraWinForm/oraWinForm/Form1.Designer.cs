@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.button2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -40,9 +40,14 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(35, 38);
+            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button1.Depth = 0;
+            this.button1.Icon = null;
+            this.button1.Location = new System.Drawing.Point(35, 110);
+            this.button1.MouseState = MaterialSkin.MouseState.HOVER;
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 96);
+            this.button1.Primary = true;
+            this.button1.Size = new System.Drawing.Size(184, 90);
             this.button1.TabIndex = 0;
             this.button1.Text = "테이블 생성";
             this.button1.UseVisualStyleBackColor = true;
@@ -50,9 +55,14 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(252, 38);
+            this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button2.Depth = 0;
+            this.button2.Icon = null;
+            this.button2.Location = new System.Drawing.Point(252, 110);
+            this.button2.MouseState = MaterialSkin.MouseState.HOVER;
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(177, 96);
+            this.button2.Primary = true;
+            this.button2.Size = new System.Drawing.Size(184, 90);
             this.button2.TabIndex = 1;
             this.button2.Text = "테이블 삭제";
             this.button2.UseVisualStyleBackColor = true;
@@ -60,9 +70,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(35, 164);
+            this.button3.Location = new System.Drawing.Point(35, 236);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(177, 96);
+            this.button3.Size = new System.Drawing.Size(184, 76);
             this.button3.TabIndex = 0;
             this.button3.Text = "데이터 추가";
             this.button3.UseVisualStyleBackColor = true;
@@ -70,9 +80,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(252, 164);
+            this.button4.Location = new System.Drawing.Point(252, 236);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(177, 96);
+            this.button4.Size = new System.Drawing.Size(184, 76);
             this.button4.TabIndex = 1;
             this.button4.Text = "데이터 보기";
             this.button4.UseVisualStyleBackColor = true;
@@ -80,9 +90,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(35, 289);
+            this.button5.Location = new System.Drawing.Point(35, 361);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(177, 96);
+            this.button5.Size = new System.Drawing.Size(184, 76);
             this.button5.TabIndex = 0;
             this.button5.Text = "데이터 삭제";
             this.button5.UseVisualStyleBackColor = true;
@@ -90,9 +100,9 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(252, 289);
+            this.button6.Location = new System.Drawing.Point(252, 361);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(177, 96);
+            this.button6.Size = new System.Drawing.Size(184, 76);
             this.button6.TabIndex = 1;
             this.button6.Text = "데이터 수정";
             this.button6.UseVisualStyleBackColor = true;
@@ -100,9 +110,9 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(35, 420);
+            this.button7.Location = new System.Drawing.Point(35, 492);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(177, 96);
+            this.button7.Size = new System.Drawing.Size(184, 76);
             this.button7.TabIndex = 0;
             this.button7.Text = "도움말";
             this.button7.UseVisualStyleBackColor = true;
@@ -110,9 +120,9 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(252, 420);
+            this.button8.Location = new System.Drawing.Point(252, 492);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(177, 96);
+            this.button8.Size = new System.Drawing.Size(184, 76);
             this.button8.TabIndex = 1;
             this.button8.Text = "프로그램 종료";
             this.button8.UseVisualStyleBackColor = true;
@@ -122,7 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 602);
+            this.ClientSize = new System.Drawing.Size(478, 602);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -139,8 +149,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private MaterialSkin.Controls.MaterialRaisedButton button1;
+        private MaterialSkin.Controls.MaterialRaisedButton button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
