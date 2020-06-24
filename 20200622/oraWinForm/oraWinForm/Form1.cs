@@ -52,7 +52,9 @@ namespace oraWinForm
 
         private void button4_Click(object sender, EventArgs e)
         {
-            db.selectDB();
+            //db.selectDB();
+            DataView dv = new DataView();
+            dv.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
