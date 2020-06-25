@@ -33,7 +33,7 @@ namespace Login.Recruit
             lb_com_name.Text = (string)dr["COM_NAME"];
             lb_field.Text = (string)dr["FIELD"];
             int pay = (int)dr["PAY"];
-            string pay_convert = string.Format("{0}", pay.ToString("#,##0"))+" 원";
+            string pay_convert = string.Format("{0}", pay.ToString("#,##0"))+" 만원";
             lb_pay.Text = pay_convert;
 
             DateTime w_date = (DateTime)dr["W_DATE"];

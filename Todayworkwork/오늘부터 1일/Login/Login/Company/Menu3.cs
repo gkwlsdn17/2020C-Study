@@ -14,7 +14,7 @@ namespace Login
     public partial class Menu3 : UserControl
     {
         //DB연결
-        string strconn = "Data Source=192.168.0.200;Initial Catalog=TodayWorkWork;Persist Security Info=True;User Id=sa;Password=8765432!";
+        string strconn = "Data Source=munggu.iptime.org,11113;Initial Catalog=TodayWorkWork;Persist Security Info=True;User Id=sa;Password=8765432!";
         public Menu3()
         {
             InitializeComponent();

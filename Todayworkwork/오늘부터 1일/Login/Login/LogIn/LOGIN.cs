@@ -45,7 +45,7 @@ namespace LogIn
                 // db에 정보가 있을 경우
                 if (ds.Tables[0].Rows.Count == 1)
                 {
-                    MessageBox.Show("개인 회원으로 로그인 되었습니다.");
+                    //MessageBox.Show("개인 회원으로 로그인 되었습니다.");
                     IMemberMainForm imain = new IMemberMainForm();
                     IMemberMainForm.setID(text_id.Text);
                     IMemberMainForm.setFormOpen(true);
@@ -73,7 +73,7 @@ namespace LogIn
                 // db에 정보가 있을 경우
                 if (ds.Tables[0].Rows.Count == 1)
                 {
-                    MessageBox.Show("기업 회원으로 로그인 되었습니다.");
+                    //MessageBox.Show("기업 회원으로 로그인 되었습니다.");
                     ds.Reset();
                     MainForm main = new MainForm();
                     MainForm.setID(text_id.Text);

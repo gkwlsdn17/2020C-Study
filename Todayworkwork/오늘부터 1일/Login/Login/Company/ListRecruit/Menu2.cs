@@ -109,7 +109,11 @@ namespace Login
             SqlConnection sqlcon = new SqlConnection(strconn);
             sqlcon.Open();
 
-            SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by W_NUM desc", sqlcon);
+            //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by W_NUM desc", sqlcon);
+            SqlCommand cmd = new SqlCommand("ListRecruitSelectData", sqlcon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+            
             adpt.Fill(ds);
 
             dataGridView1.Rows.Clear();
@@ -130,35 +134,20 @@ namespace Login
 
                 SqlConnection sqlcon = new SqlConnection(strconn);
                 sqlcon.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "select * from RECRUIT where SUBJECT LIKE '%"+str+"%' or COM_NAME LIKE '%"+str+"%' order by SUBJECT ASC, COM_NAME DESC";
-                cmd.Connection = sqlcon;
+                SqlCommand cmd = new SqlCommand("ListRecruitSelectSearchData",sqlcon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@str", str);
+               
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                adpt.Fill(ds);
                 
-                SqlDataAdapter adpt = new SqlDataAdapter(cmd.CommandText, sqlcon);
-                adpt.Fill(ds);
-                /*
-                 * 왜 안되는거지 ㅠㅠ
-                SqlDataAdapter adpt = getSqlDataAdapter(sqlcon,str);
-                adpt.Fill(ds);
-                */
                 dataGridView1.Rows.Clear();
                 gridViewSetting(ds.Tables[0]);
                 
                 sqlcon.Close();
             }
         }
-        /*
-        private SqlDataAdapter getSqlDataAdapter(SqlConnection sqlcon,string str)
-        {
-            SqlDataAdapter adpt= new SqlDataAdapter();
-            adpt.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adpt.SelectCommand = new SqlCommand("select * from RECRUIT where SUBJECT LIKE '%@str1%' or COM_NAME LIKE '%@str2%' order by SUBJECT ASC, COM_NAME DESC", sqlcon);
-            adpt.SelectCommand.Parameters.AddWithValue("@str1", str);
-            adpt.SelectCommand.Parameters.AddWithValue("@str2", str);
-            return adpt;
-
-        }
-        */
+       
         private void btn_search_Click(object sender, EventArgs e)
         {
             search_on = true;
@@ -173,7 +162,7 @@ namespace Login
             search_on = false;
         }
 
-        private bool comSearchChoice = true; // true면 업체명 오름차순, false면 내림차순
+        private bool com_search_choice = true; // true면 업체명 오름차순, false면 내림차순
         private void btn_comSearch_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
@@ -182,33 +171,52 @@ namespace Login
             sqlcon.Open();
             if (search_on == true)
             {
-                if (comSearchChoice == true)
+                SqlCommand cmd = new SqlCommand("ListRecruitComSearchChoice", sqlcon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@search_on", search_on.ToString());
+                cmd.Parameters.AddWithValue("@com_search_choice", com_search_choice.ToString());
+                cmd.Parameters.AddWithValue("@search_keyword", search_keyword);
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                adpt.Fill(ds);
+                if (com_search_choice == true)
                 {
-                    
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by COM_NAME ASC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    comSearchChoice = false;
+
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by COM_NAME ASC, W_NUM DESC;", sqlcon);
+                    com_search_choice = false;
                 }
                 else
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by COM_NAME DESC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    comSearchChoice = true;
+                    //SqlCommand cmd = new SqlCommand("ListRecruitComSearchChoice", sqlcon);
+                    //cmd.CommandType = CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@search_on", search_on.ToString());
+                    //cmd.Parameters.AddWithValue("@comSearchChoice", comSearchChoice.ToString());
+                    //cmd.Parameters.AddWithValue("@search_keyword", search_keyword);
+                    //SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by COM_NAME DESC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    com_search_choice = true;
                 }
             }
             else
             {
-                if (comSearchChoice == true)
+                SqlCommand cmd = new SqlCommand("ListRecruitComSearchChoice", sqlcon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@search_on", search_on.ToString());
+                cmd.Parameters.AddWithValue("@com_search_choice", com_search_choice.ToString());
+                cmd.Parameters.AddWithValue("@search_keyword", "none");
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                adpt.Fill(ds);
+                if (com_search_choice == true)
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by COM_NAME ASC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    comSearchChoice = false;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by COM_NAME ASC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    com_search_choice = false;
                 }
                 else
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by COM_NAME DESC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    comSearchChoice = true;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by COM_NAME DESC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    com_search_choice = true;
                 }
             }
             dataGridView1.Rows.Clear();
@@ -217,43 +225,58 @@ namespace Login
             ActivateButton(sender);
         }
         
-        private bool countSearchChoice = true; //true면 조회수 내림차순, false면 오름차순
+        private bool count_search_choice = true; //true면 조회수 내림차순, false면 오름차순
         private void btn_countSearch_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
 
             SqlConnection sqlcon = new SqlConnection(strconn);
             sqlcon.Open();
+
             if (search_on == true)
             {
-                if (countSearchChoice == true)
+                SqlCommand cmd = new SqlCommand("ListRecruitCountSearchChoice", sqlcon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@search_on", search_on.ToString());
+                cmd.Parameters.AddWithValue("@count_search_choice", count_search_choice.ToString());
+                cmd.Parameters.AddWithValue("@search_keyword", search_keyword);
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                adpt.Fill(ds);
+                if (count_search_choice == true)
                 {
                     
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by COUNT DESC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    countSearchChoice = false;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by COUNT DESC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    count_search_choice = false;
                 }
                 else
                 {
 
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by COUNT ASC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    countSearchChoice = true;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by COUNT ASC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    count_search_choice = true;
                 }
             }
             else
             {
-                if (countSearchChoice == true)
+                SqlCommand cmd = new SqlCommand("ListRecruitCountSearchChoice", sqlcon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@search_on", search_on.ToString());
+                cmd.Parameters.AddWithValue("@count_search_choice", count_search_choice.ToString());
+                cmd.Parameters.AddWithValue("@search_keyword", "none");
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                adpt.Fill(ds);
+                if (count_search_choice == true)
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by COUNT DESC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    countSearchChoice = false;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by COUNT DESC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    count_search_choice = false;
                 }
                 else
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by COUNT ASC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    countSearchChoice = true;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by COUNT ASC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    count_search_choice = true;
                 }
             }
             dataGridView1.Rows.Clear();
@@ -302,7 +325,7 @@ namespace Login
 
         }
 
-        private bool paySearchChoice = true; //true는 내림차순, false는 오름차순, 기본은 내림차순으로 설정
+        private bool pay_search_choice = true; //true는 내림차순, false는 오름차순, 기본은 내림차순으로 설정
         private void btn_pay_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
@@ -311,34 +334,48 @@ namespace Login
             sqlcon.Open();
             if (search_on == true)
             {
-                if (paySearchChoice == true)
+                SqlCommand cmd = new SqlCommand("ListRecruitPaySearchChoice", sqlcon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@search_on", search_on.ToString());
+                cmd.Parameters.AddWithValue("@pay_search_choice", pay_search_choice.ToString());
+                cmd.Parameters.AddWithValue("@search_keyword", search_keyword);
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                adpt.Fill(ds);
+                if (pay_search_choice == true)
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by PAY DESC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    paySearchChoice = false;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by PAY DESC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    pay_search_choice = false;
                 }
                 else
                 {
 
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by PAY ASC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    paySearchChoice = true;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by PAY ASC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    pay_search_choice = true;
                 }
             }
             else
             {
-                if (paySearchChoice == true)
+                SqlCommand cmd = new SqlCommand("ListRecruitPaySearchChoice", sqlcon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@search_on", search_on.ToString());
+                cmd.Parameters.AddWithValue("@pay_search_choice", pay_search_choice.ToString());
+                cmd.Parameters.AddWithValue("@search_keyword", "none");
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                adpt.Fill(ds);
+                if (pay_search_choice == true)
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by PAY DESC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    paySearchChoice = false;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by PAY DESC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    pay_search_choice = false;
                 }
                 else
                 {
 
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by PAY ASC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    paySearchChoice = true;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by PAY ASC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    pay_search_choice = true;
                 }
             }
             
@@ -349,7 +386,7 @@ namespace Login
             ActivateButton(sender);
         }
 
-        private bool w_placeSearchChoice = false; //false는 오름차순, true는 내림차순, 기본은 오름차순으로 설정
+        private bool w_place_search_choice = false; //false는 오름차순, true는 내림차순, 기본은 오름차순으로 설정
         private void btn_w_place_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
@@ -358,32 +395,46 @@ namespace Login
             sqlcon.Open();
             if (search_on == true)
             {
-                if (w_placeSearchChoice == true)
+                SqlCommand cmd = new SqlCommand("ListRecruitW_PLACESearchChoice", sqlcon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@search_on", search_on.ToString());
+                cmd.Parameters.AddWithValue("@w_place_search_choice", w_place_search_choice.ToString());
+                cmd.Parameters.AddWithValue("@search_keyword", search_keyword);
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                adpt.Fill(ds);
+                if (w_place_search_choice == true)
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by W_PLACE DESC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    w_placeSearchChoice = false;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by W_PLACE DESC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    w_place_search_choice = false;
                 }
                 else
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by W_PLACE ASC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    w_placeSearchChoice = true;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by W_PLACE ASC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    w_place_search_choice = true;
                 }
             }
             else
             {
-                if (w_placeSearchChoice == true)
+                SqlCommand cmd = new SqlCommand("ListRecruitW_PLACESearchChoice", sqlcon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@search_on", search_on.ToString());
+                cmd.Parameters.AddWithValue("@w_place_search_choice", w_place_search_choice.ToString());
+                cmd.Parameters.AddWithValue("@search_keyword", "none");
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                adpt.Fill(ds);
+                if (w_place_search_choice == true)
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by W_PLACE DESC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    w_placeSearchChoice = false;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by W_PLACE DESC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    w_place_search_choice = false;
                 }
                 else
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by W_PLACE ASC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    w_placeSearchChoice = true;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by W_PLACE ASC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    w_place_search_choice = true;
                 }
             }
             
@@ -393,7 +444,7 @@ namespace Login
             ActivateButton(sender);
         }
 
-        private bool w_end_timeSearchChoice = false; //true면 내림차순, false면 오름차순, 기본은 오름차순으로 설정
+        private bool w_end_time_search_choice = false; //true면 내림차순, false면 오름차순, 기본은 오름차순으로 설정
         private void btn_w_end_time_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
@@ -402,32 +453,46 @@ namespace Login
             sqlcon.Open();
             if (search_on == true)
             {
-                if (w_end_timeSearchChoice == true)
+                SqlCommand cmd = new SqlCommand("ListRecruitW_END_TIMESearchChoice", sqlcon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@search_on", search_on.ToString());
+                cmd.Parameters.AddWithValue("@w_end_time_search_choice", w_end_time_search_choice.ToString());
+                cmd.Parameters.AddWithValue("@search_keyword", search_keyword);
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                adpt.Fill(ds);
+                if (w_end_time_search_choice == true)
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by W_END_TIME DESC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    w_end_timeSearchChoice = false;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by W_END_TIME DESC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    w_end_time_search_choice = false;
                 }
                 else
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by W_END_TIME ASC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    w_end_timeSearchChoice = true;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by W_END_TIME ASC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    w_end_time_search_choice = true;
                 }
             }
             else
             {
-                if (w_end_timeSearchChoice == true)
+                SqlCommand cmd = new SqlCommand("ListRecruitW_END_TIMESearchChoice", sqlcon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@search_on", search_on.ToString());
+                cmd.Parameters.AddWithValue("@w_end_time_search_choice", w_end_time_search_choice.ToString());
+                cmd.Parameters.AddWithValue("@search_keyword", "none");
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                adpt.Fill(ds);
+                if (w_end_time_search_choice == true)
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by W_END_TIME DESC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    w_end_timeSearchChoice = false;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by W_END_TIME DESC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    w_end_time_search_choice = false;
                 }
                 else
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by W_END_TIME ASC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    w_end_timeSearchChoice = true;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by W_END_TIME ASC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    w_end_time_search_choice = true;
                 }
             }
             
@@ -437,7 +502,7 @@ namespace Login
             ActivateButton(sender);
         }
 
-        private bool subjectSearchChoice = false; //false면 오름차순, ture면 내림차순 기본은 제목 오름차순으로 설정
+        private bool subject_search_choice = false; //false면 오름차순, ture면 내림차순 기본은 제목 오름차순으로 설정
         private void btn_subjectSearch_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
@@ -446,32 +511,46 @@ namespace Login
             sqlcon.Open();
             if (search_on == true)
             {
-                if (subjectSearchChoice == true)
+                SqlCommand cmd = new SqlCommand("ListRecruitSubjectSearchChoice", sqlcon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@search_on", search_on.ToString());
+                cmd.Parameters.AddWithValue("@subject_search_choice", subject_search_choice.ToString());
+                cmd.Parameters.AddWithValue("@search_keyword", search_keyword);
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                adpt.Fill(ds);
+                if (subject_search_choice == true)
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by SUBJECT DESC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    subjectSearchChoice = false;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by SUBJECT DESC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    subject_search_choice = false;
                 }
                 else
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by SUBJECT ASC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    subjectSearchChoice = true;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT where SUBJECT LIKE '%" + search_keyword + "%' or COM_NAME LIKE '%" + search_keyword + "%' order by SUBJECT ASC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    subject_search_choice = true;
                 }
             }
             else
             {
-                if (subjectSearchChoice == true)
+                SqlCommand cmd = new SqlCommand("ListRecruitSubjectSearchChoice", sqlcon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@search_on", search_on.ToString());
+                cmd.Parameters.AddWithValue("@subject_search_choice", subject_search_choice.ToString());
+                cmd.Parameters.AddWithValue("@search_keyword", "none");
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                adpt.Fill(ds);
+                if (subject_search_choice == true)
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by SUBJECT DESC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    subjectSearchChoice = false;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by SUBJECT DESC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    subject_search_choice = false;
                 }
                 else
                 {
-                    SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by SUBJECT ASC, W_NUM DESC;", sqlcon);
-                    adpt.Fill(ds);
-                    subjectSearchChoice = true;
+                    //SqlDataAdapter adpt = new SqlDataAdapter("select * from RECRUIT order by SUBJECT ASC, W_NUM DESC;", sqlcon);
+                    //adpt.Fill(ds);
+                    subject_search_choice = true;
                 }
             }
             dataGridView1.Rows.Clear();
