@@ -14,7 +14,11 @@ namespace LogIn
 {
 	public partial class Form1 : Form
 	{
-		public Form1()
+        //마우스로 창 이동
+        bool On;
+        Point Pos;
+
+        public Form1()
 		{
 			InitializeComponent();
             rbtn_customer.Checked = true;
@@ -112,5 +116,26 @@ namespace LogIn
             PWFind PWFindForm = new PWFind();
             PWFindForm.Show();
         }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            On = true;
+            Pos.X = e.X;
+            Pos.Y = e.Y;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (On == true)
+            {
+                this.SetDesktopLocation(MousePosition.X - Pos.X, MousePosition.Y - Pos.Y);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            On = false;
+        }
+
     }
 }

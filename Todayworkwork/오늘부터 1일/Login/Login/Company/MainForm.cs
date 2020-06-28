@@ -14,12 +14,15 @@ namespace Login
 {
     public partial class MainForm : Form
     {
+        //로그인에서 기업회원을 선택해서 로그인 할 경우 true로 바뀐다.
         private static bool formOpen = false;
         //마우스로 창 이동
         bool On;
         Point Pos;
 
+        //메뉴 버튼을 누를 때 마다 현재 버튼이 어떤 버튼인지 알게 하고 색을 바꿈
         private Button currentButton = null;
+
         private static string userid;
         static Com_customer user = new Com_customer();
 
@@ -29,10 +32,13 @@ namespace Login
         public MainForm()
         {
             InitializeComponent();
+
+            //현재 날짜 및 시간
             Timer timer = new Timer();
             timer.Tick += new EventHandler(timer1_Tick);
             timer.Start();
             
+            //메뉴2는 static 변수로 선언, 다른 폼에서 참조 가능
             Menu2.setInstance(menu21);
         }
         
@@ -104,14 +110,17 @@ namespace Login
         {
             return user.EMAIL;
         }
-        private void ActivateButton(object btnSender)
+        private void ActivateButton(object btnSender) //현재 버튼과 직전의 버튼 색을 바꾸는 함수
         {
             if (btnSender != null)
             {
                 if (currentButton != null)
                 {
-                    currentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(166)))));
-                    currentButton.ForeColor = System.Drawing.Color.White;
+                    if(btnSender != currentButton)
+                    {
+                        currentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(166)))));
+                        currentButton.ForeColor = System.Drawing.Color.White;
+                    }
 
 
                 }

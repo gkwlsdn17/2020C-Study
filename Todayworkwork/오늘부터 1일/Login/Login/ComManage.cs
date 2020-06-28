@@ -15,7 +15,7 @@ namespace Login
     {
         //DB연결
         string strconn = "Data Source=munggu.iptime.org,11113;Initial Catalog=TodayWorkWork;Persist Security Info=True;User ID=sa;Password=8765432!";
-        string current_row_com_name;
+        //string current_row_com_name;
         string current_com_num;
         public ComManage()
         {
@@ -54,6 +54,9 @@ namespace Login
         }
         private void text_clean()
         {
+            tb_com_num.ReadOnly = false;
+            tb_ap_count.ReadOnly = false;
+            tb_star_pt.ReadOnly = false;
             tb_ap_count.Text = "";
             tb_com_addr.Text = "";
             tb_com_name.Text = "";
@@ -70,6 +73,7 @@ namespace Login
         }
         private void search()
         {
+            
             SqlConnection sqlcon = new SqlConnection(strconn);
             sqlcon.Open();
             SqlCommand cmd = new SqlCommand("Select * from COM_INFO where COM_NAME LIKE '%'+ @com_name +'%'", sqlcon);
@@ -84,12 +88,15 @@ namespace Login
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            current_row_com_name = dataGridView1[2, e.RowIndex].Value.ToString();
+            tb_com_num.ReadOnly = true;
+            tb_ap_count.ReadOnly = true;
+            tb_star_pt.ReadOnly = true;
+            //current_row_com_name = dataGridView1[2, e.RowIndex].Value.ToString();
             current_com_num = dataGridView1[1, e.RowIndex].Value.ToString();
             SqlConnection sqlcon = new SqlConnection(strconn);
             sqlcon.Open();
-            SqlCommand cmd = new SqlCommand("Select * from COM_INFO where COM_NAME = @com_name", sqlcon);
-            cmd.Parameters.AddWithValue("@com_name", current_row_com_name);
+            SqlCommand cmd = new SqlCommand("Select * from COM_INFO where COM_NUM = @com_num", sqlcon);
+            cmd.Parameters.AddWithValue("@com_num", current_com_num);
             SqlDataAdapter adpt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             adpt.Fill(ds);
@@ -108,13 +115,15 @@ namespace Login
         
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            current_row_com_name = dataGridView1[2, e.RowIndex].Value.ToString();
+            tb_com_num.ReadOnly = true;
+            tb_ap_count.ReadOnly = true;
+            tb_star_pt.ReadOnly = true;
+            //current_row_com_name = dataGridView1[2, e.RowIndex].Value.ToString();
             current_com_num = dataGridView1[1, e.RowIndex].Value.ToString();
             SqlConnection sqlcon = new SqlConnection(strconn);
             sqlcon.Open();
-            SqlCommand cmd = new SqlCommand("Select * from COM_INFO where COM_NAME = @com_name", sqlcon);
-            cmd.Parameters.AddWithValue("@com_name", current_row_com_name);
+            SqlCommand cmd = new SqlCommand("Select * from COM_INFO where COM_NUM = @com_num", sqlcon);
+            cmd.Parameters.AddWithValue("@com_num", current_com_num);
             SqlDataAdapter adpt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             adpt.Fill(ds);
@@ -134,6 +143,9 @@ namespace Login
 
         private void btn_insert_Click(object sender, EventArgs e)
         {
+            tb_com_num.ReadOnly = false;
+            tb_ap_count.ReadOnly = true; 
+            tb_star_pt.ReadOnly = true; 
             SqlConnection sqlcon = new SqlConnection(strconn);
             sqlcon.Open();
             try
@@ -147,24 +159,15 @@ namespace Login
                 cmd.Parameters.AddWithValue("@com_tel", tb_com_name.Text);
                 int sales = int.Parse(tb_sales.Text);
                 cmd.Parameters.AddWithValue("@sales", sales);
-                int ap_count = int.Parse(tb_ap_count.Text);
-                cmd.Parameters.AddWithValue("@ap_count", ap_count);
-                float star_pt = float.Parse(tb_star_pt.Text);
-                cmd.Parameters.AddWithValue("@star_pt", star_pt);
+                cmd.Parameters.AddWithValue("@ap_count", 0);
+                cmd.Parameters.AddWithValue("@star_pt", 0);
                 cmd.ExecuteNonQuery();
                 select_all();
             }
             catch(Exception ee)
             {
-                if (string.Equals(current_row_com_name,tb_com_name))
-                {
-                    MessageBox.Show("회사이름이 같아서 등록불가");
-                }
-                else
-                {
-
-                    MessageBox.Show(ee.StackTrace);
-                }
+                MessageBox.Show(ee.StackTrace);
+                
             }
             finally
             {
@@ -177,6 +180,8 @@ namespace Login
         private void btn_update_Click(object sender, EventArgs e)
         {
             tb_com_num.ReadOnly = true;
+            tb_ap_count.ReadOnly = true;
+            tb_star_pt.ReadOnly = true;
             try
             {
                 SqlConnection sqlcon = new SqlConnection(strconn);
@@ -212,8 +217,8 @@ namespace Login
             {
                 SqlConnection sqlcon = new SqlConnection(strconn);
                 sqlcon.Open();
-                SqlCommand cmd = new SqlCommand("delete from COM_INFO where COM_NAME = @com_name", sqlcon);
-                cmd.Parameters.AddWithValue("@com_name", current_row_com_name);
+                SqlCommand cmd = new SqlCommand("delete from COM_INFO where COM_NUM = @com_num", sqlcon);
+                cmd.Parameters.AddWithValue("@com_num", current_com_num);
                 cmd.ExecuteNonQuery();
                 select_all();
                 text_clean();

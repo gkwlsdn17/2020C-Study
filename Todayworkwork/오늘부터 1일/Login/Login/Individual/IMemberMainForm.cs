@@ -53,30 +53,19 @@ namespace Login
             }
             sqlcon.Close();
         }
-        /*
-        private void readName(string id)
-        {
-            SqlConnection sqlcon = new SqlConnection(strconn);
-            sqlcon.Open();
-            SqlCommand cmd = new SqlCommand("select * from CUSTOMER where id = @id", sqlcon);
-            cmd.Parameters.AddWithValue("@id", id);
-            SqlDataReader sdr = cmd.ExecuteReader();
-
-            while (sdr.Read())
-            {
-                lb_username.Text = sdr["NAME"].ToString();
-            }
-            sqlcon.Close();
-        }
-        */
+        
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
             {
                 if (currentButton != null)
                 {
-                    currentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(166)))));
-                    currentButton.ForeColor = System.Drawing.Color.White;
+                    if(currentButton != btnSender)
+                    {
+
+                        currentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(166)))));
+                        currentButton.ForeColor = System.Drawing.Color.White;
+                    }
 
 
                 }

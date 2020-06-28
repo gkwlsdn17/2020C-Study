@@ -13,6 +13,10 @@ namespace Login
 {
     public partial class SignUp : Form
     {
+        //마우스로 창 이동
+        bool On;
+        Point Pos;
+
         string strconn = "Data Source=munggu.iptime.org,11113;Initial Catalog=TodayWorkWork;Persist Security Info=True;User ID=sa;Password=8765432!";
         string table_name = "CUSTOMER";
 
@@ -133,6 +137,26 @@ namespace Login
         private void btn_exit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            On = true;
+            Pos.X = e.X;
+            Pos.Y = e.Y;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (On == true)
+            {
+                this.SetDesktopLocation(MousePosition.X - Pos.X, MousePosition.Y - Pos.Y);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            On = false;
         }
     }
 }

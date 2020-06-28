@@ -61,6 +61,9 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1200, 85);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // btn_exit
             // 
@@ -96,7 +99,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(118, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(183, 27);
+            this.label2.Size = new System.Drawing.Size(230, 34);
             this.label2.TabIndex = 2;
             this.label2.Text = "오늘부터 일일";
             // 
@@ -108,7 +111,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.label1.Location = new System.Drawing.Point(319, 436);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 24);
+            this.label1.Size = new System.Drawing.Size(114, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "User ID:";
             // 
@@ -131,7 +134,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.label3.Location = new System.Drawing.Point(508, 323);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(184, 24);
+            this.label3.Size = new System.Drawing.Size(230, 30);
             this.label3.TabIndex = 4;
             this.label3.Text = "Please Login First";
             // 
@@ -141,7 +144,7 @@
             this.text_id.Font = new System.Drawing.Font("HY강M", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.text_id.Location = new System.Drawing.Point(313, 472);
             this.text_id.Name = "text_id";
-            this.text_id.Size = new System.Drawing.Size(575, 35);
+            this.text_id.Size = new System.Drawing.Size(575, 42);
             this.text_id.TabIndex = 5;
             // 
             // text_pw
@@ -150,7 +153,7 @@
             this.text_pw.Font = new System.Drawing.Font("HY강M", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.text_pw.Location = new System.Drawing.Point(313, 575);
             this.text_pw.Name = "text_pw";
-            this.text_pw.Size = new System.Drawing.Size(575, 35);
+            this.text_pw.Size = new System.Drawing.Size(575, 42);
             this.text_pw.TabIndex = 7;
             this.text_pw.UseSystemPasswordChar = true;
             // 
@@ -162,7 +165,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.label4.Location = new System.Drawing.Point(319, 541);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 24);
+            this.label4.Size = new System.Drawing.Size(144, 30);
             this.label4.TabIndex = 6;
             this.label4.Text = "Password:";
             // 
@@ -190,7 +193,7 @@
             this.rbtn_customer.ForeColor = System.Drawing.Color.Black;
             this.rbtn_customer.Location = new System.Drawing.Point(447, 385);
             this.rbtn_customer.Name = "rbtn_customer";
-            this.rbtn_customer.Size = new System.Drawing.Size(132, 28);
+            this.rbtn_customer.Size = new System.Drawing.Size(164, 34);
             this.rbtn_customer.TabIndex = 10;
             this.rbtn_customer.TabStop = true;
             this.rbtn_customer.Text = "개인 회원";
@@ -204,7 +207,7 @@
             this.rbtn_comcustomer.ForeColor = System.Drawing.Color.Black;
             this.rbtn_comcustomer.Location = new System.Drawing.Point(695, 385);
             this.rbtn_comcustomer.Name = "rbtn_comcustomer";
-            this.rbtn_comcustomer.Size = new System.Drawing.Size(132, 28);
+            this.rbtn_comcustomer.Size = new System.Drawing.Size(164, 34);
             this.rbtn_comcustomer.TabIndex = 11;
             this.rbtn_comcustomer.TabStop = true;
             this.rbtn_comcustomer.Text = "기업 회원";
@@ -219,7 +222,7 @@
             this.btn_signUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.btn_signUp.Location = new System.Drawing.Point(313, 640);
             this.btn_signUp.Name = "btn_signUp";
-            this.btn_signUp.Size = new System.Drawing.Size(118, 36);
+            this.btn_signUp.Size = new System.Drawing.Size(143, 40);
             this.btn_signUp.TabIndex = 14;
             this.btn_signUp.Text = "회원가입";
             this.btn_signUp.UseVisualStyleBackColor = true;
@@ -234,7 +237,7 @@
             this.btn_idFind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.btn_idFind.Location = new System.Drawing.Point(512, 640);
             this.btn_idFind.Name = "btn_idFind";
-            this.btn_idFind.Size = new System.Drawing.Size(148, 36);
+            this.btn_idFind.Size = new System.Drawing.Size(183, 40);
             this.btn_idFind.TabIndex = 15;
             this.btn_idFind.Text = "아이디 찾기";
             this.btn_idFind.UseVisualStyleBackColor = true;
@@ -249,7 +252,7 @@
             this.btn_pwFind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.btn_pwFind.Location = new System.Drawing.Point(716, 640);
             this.btn_pwFind.Name = "btn_pwFind";
-            this.btn_pwFind.Size = new System.Drawing.Size(172, 36);
+            this.btn_pwFind.Size = new System.Drawing.Size(213, 40);
             this.btn_pwFind.TabIndex = 16;
             this.btn_pwFind.Text = "비밀번호 찾기";
             this.btn_pwFind.UseVisualStyleBackColor = true;
@@ -276,6 +279,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
