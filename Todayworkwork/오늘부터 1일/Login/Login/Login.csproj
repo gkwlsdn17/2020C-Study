@@ -61,6 +61,18 @@
     <Compile Include="ComManage.Designer.cs">
       <DependentUpon>ComManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Company\ChangeComMyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\ChangeComMyInfo.Designer.cs">
+      <DependentUpon>ChangeComMyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\ChangeComMyPW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\ChangeComMyPW.Designer.cs">
+      <DependentUpon>ChangeComMyPW.cs</DependentUpon>
+    </Compile>
     <Compile Include="Company\ManagePost\ApplicantList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +94,18 @@
     <Compile Include="Company\PostRecruit\PostInsert.cs" />
     <Compile Include="Com_customer.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="Individual\ChangeInMyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Individual\ChangeInMyInfo.Designer.cs">
+      <DependentUpon>ChangeInMyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Individual\ChangeInMyPW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Individual\ChangeInMyPW.Designer.cs">
+      <DependentUpon>ChangeInMyPW.cs</DependentUpon>
+    </Compile>
     <Compile Include="Individual\CompanyInfo\InfoItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -189,8 +213,20 @@
     <EmbeddedResource Include="ComManage.resx">
       <DependentUpon>ComManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Company\ChangeComMyInfo.resx">
+      <DependentUpon>ChangeComMyInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\ChangeComMyPW.resx">
+      <DependentUpon>ChangeComMyPW.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Company\ManagePost\ApplicantList.resx">
       <DependentUpon>ApplicantList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Individual\ChangeInMyInfo.resx">
+      <DependentUpon>ChangeInMyInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Individual\ChangeInMyPW.resx">
+      <DependentUpon>ChangeInMyPW.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Individual\CompanyInfo\InfoItem.resx">
       <DependentUpon>InfoItem.cs</DependentUpon>

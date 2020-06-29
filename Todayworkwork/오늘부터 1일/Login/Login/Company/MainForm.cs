@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.Company;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,7 +28,7 @@ namespace Login
         static Com_customer user = new Com_customer();
 
         //DB연결
-        string strconn = "Data Source=munggu.iptime.org,11113;Initial Catalog=TodayWorkWork;Persist Security Info=True;User ID=sa;Password=8765432!";
+        static string strconn = "Data Source=munggu.iptime.org,11113;Initial Catalog=TodayWorkWork;Persist Security Info=True;User ID=sa;Password=8765432!";
 
         public MainForm()
         {
@@ -41,7 +42,10 @@ namespace Login
             //메뉴2는 static 변수로 선언, 다른 폼에서 참조 가능
             Menu2.setInstance(menu21);
         }
-        
+        public static string getSqlSet()
+        {
+            return strconn;
+        }
         private void readUserInfo(string id) //로그인 된 사용자의 정보를 읽어서 Com_customer클래스에 넣어줌
         {
             SqlConnection sqlcon = new SqlConnection(strconn);
@@ -193,6 +197,7 @@ namespace Login
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            
             if (formOpen == false)
             {
                 this.Close();
@@ -219,6 +224,26 @@ namespace Login
         {
             ComManage form = new ComManage();
             form.Show();
+        }
+        
+        private void 사용자정보수정ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeComMyInfo cmi = new ChangeComMyInfo();
+            cmi.sendMsg += new ChangeComMyInfo.sendMsgDelegate(refreshInfo);
+            cmi.Show();
+        }
+        private void refreshInfo(string msg)
+        {
+            if(msg == "OK")
+            {
+                readUserInfo(userid);
+            }
+        }
+
+        private void 비밀번호변경ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeComMyPW cmp = new ChangeComMyPW();
+            cmp.Show();
         }
     }
 }

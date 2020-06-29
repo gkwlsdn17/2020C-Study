@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.Individual;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,7 +54,12 @@ namespace Login
             }
             sqlcon.Close();
         }
-        
+        public static string getID() { return user.ID; }
+        public static string getPW(){ return user.PW; }
+        public static string getName() { return user.NAME; }
+        public static string getAddr() { return user.ADDR; }
+        public static string getPhone() { return user.PHONE; }
+        public static string getEmail() { return user.EMAIL; }
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
@@ -156,6 +162,26 @@ namespace Login
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             afterLoginMainPage1.BringToFront();
+        }
+
+        private void 사용자정보수정ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeInMyInfo cimi = new ChangeInMyInfo();
+            
+            cimi.sendMsg += new ChangeInMyInfo.sendMsgDelegate(refreshInfo);
+            cimi.Show();
+        }
+        private void refreshInfo(string msg)
+        {
+            if (msg == "OK")
+            {
+                readUserInfo(userid);
+            }
+        }
+        private void 비밀번호변경ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeInMyPW cimp = new ChangeInMyPW();
+            cimp.Show();
         }
     }
 }
