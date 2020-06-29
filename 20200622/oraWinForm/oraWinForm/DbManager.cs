@@ -103,7 +103,7 @@ namespace oraWinForm
                 Console.WriteLine("테이블 삭제 오류: " + e.Message);
             }
         }
-        public void selectDB()
+        public List<DBData> selectDB()
         {
             int count = 0;
             cmd.Connection = conn;
@@ -111,17 +111,24 @@ namespace oraWinForm
             cmd.CommandType = System.Data.CommandType.Text;
             dr = cmd.ExecuteReader();
 
-            Console.WriteLine("ID\tNAME\tAGE\tADDR\t");
-            Console.WriteLine("-------------------------------------------");
+            List<DBData> list = new List<DBData>();
+
+            //Console.WriteLine("ID\tNAME\tAGE\tADDR\t");
+            //Console.WriteLine("-------------------------------------------");
             if (dr.HasRows)
             {
                 while (dr.Read())
                 {
+                    /*
                     Console.Write(dr["id"] + "\t" + dr["name"] + "\t" + dr["age"] + "\t" + dr["addr"]);
                     Console.WriteLine();
                     count++;
+                    */
+                    list.Add(new DBData(dr["NAME"].ToString(),int.Parse(dr["AGE"].ToString()), dr["ADDR"].ToString()));
+
+
                 }
-                Console.WriteLine("총 데이터의 행의 갯수는 " + count + "개 입니다.");
+                //Console.WriteLine("총 데이터의 행의 갯수는 " + count + "개 입니다.");
             }
             else
             {
@@ -129,7 +136,9 @@ namespace oraWinForm
             }
 
             dr.Close();
+            return list;
         }
+        
         public void insertDB()
         {
 

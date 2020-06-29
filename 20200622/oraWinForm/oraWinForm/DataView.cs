@@ -48,7 +48,19 @@ namespace oraWinForm
 
         private void DataView_Load(object sender, EventArgs e)
         {
-            initListView();
+            //initListView();
+            List<DBData> list = DbManager.getInstance().selectDB();
+            
+            for(int i = 0; i < list.Count; i++)
+            {
+                
+                listView1.Items.Add(new ListViewItem(new string[]
+                {
+                    (i+1).ToString(), list[i].NAME, list[i].AGE.ToString(),list[i].ADDR
+                }));
+                
+                
+            }
         }
 
         private void listView1_DoubleClick(object sender, EventArgs e)

@@ -43,7 +43,7 @@
             this.button1.Location = new System.Drawing.Point(62, 216);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 35);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 3;
             this.button1.Text = "추가";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.onSendData);
@@ -53,7 +53,7 @@
             this.button2.Location = new System.Drawing.Point(181, 216);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(86, 35);
-            this.button2.TabIndex = 2;
+            this.button2.TabIndex = 4;
             this.button2.Text = "취소";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -71,7 +71,7 @@
             this.tb_name.SelectionLength = 0;
             this.tb_name.SelectionStart = 0;
             this.tb_name.Size = new System.Drawing.Size(175, 23);
-            this.tb_name.TabIndex = 3;
+            this.tb_name.TabIndex = 0;
             this.tb_name.TabStop = false;
             this.tb_name.UseSystemPasswordChar = false;
             // 
@@ -101,7 +101,7 @@
             this.tb_age.SelectionLength = 0;
             this.tb_age.SelectionStart = 0;
             this.tb_age.Size = new System.Drawing.Size(175, 23);
-            this.tb_age.TabIndex = 3;
+            this.tb_age.TabIndex = 1;
             this.tb_age.TabStop = false;
             this.tb_age.UseSystemPasswordChar = false;
             // 
@@ -131,7 +131,7 @@
             this.tb_addr.SelectionLength = 0;
             this.tb_addr.SelectionStart = 0;
             this.tb_addr.Size = new System.Drawing.Size(175, 23);
-            this.tb_addr.TabIndex = 3;
+            this.tb_addr.TabIndex = 2;
             this.tb_addr.TabStop = false;
             this.tb_addr.UseSystemPasswordChar = false;
             // 

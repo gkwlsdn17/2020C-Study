@@ -73,6 +73,7 @@
     <Compile Include="DataView.Designer.cs">
       <DependentUpon>DataView.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBData.cs" />
     <Compile Include="DbManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
