@@ -212,7 +212,7 @@ namespace Login
                 cmd.Parameters.AddWithValue("@ap_count", 0);
                 cmd.Parameters.AddWithValue("@star_pt", 0);
                 cmd.ExecuteNonQuery();
-                select_all();
+                
             }
             catch(Exception ee)
             {
@@ -223,6 +223,8 @@ namespace Login
             {
                 if(sqlcon!=null)
                     sqlcon.Close();
+                select_all();
+                text_clean();
             }
         }
 
@@ -236,8 +238,7 @@ namespace Login
             try
             {
                 sqlcon.Open();
-                SqlCommand cmd = new SqlCommand("update COM_INFO set COM_NUM=@com_num, COM_NAME=@com_name, COM_ADDR=@com_addr, FIELD=@field, COM_TEL=@com_tel, SALES = @sales, AP_COUNT = @ap_count, STAR_PT = @star_pt where COM_NUM = @before_com_num", sqlcon);
-                cmd.Parameters.AddWithValue("@com_num", tb_com_num.Text);
+                SqlCommand cmd = new SqlCommand("update COM_INFO set COM_NAME=@com_name, COM_ADDR=@com_addr, FIELD=@field, COM_TEL=@com_tel, SALES = @sales, AP_COUNT = @ap_count, STAR_PT = @star_pt where COM_NUM = @com_num", sqlcon);
                 cmd.Parameters.AddWithValue("@com_name", tb_com_name.Text);
                 cmd.Parameters.AddWithValue("@com_addr", tb_com_addr.Text);
                 cmd.Parameters.AddWithValue("@field", tb_field.Text);
@@ -248,7 +249,7 @@ namespace Login
                 cmd.Parameters.AddWithValue("@ap_count", ap_count);
                 float star_pt = float.Parse(tb_star_pt.Text);
                 cmd.Parameters.AddWithValue("@star_pt", star_pt);
-                cmd.Parameters.AddWithValue("@before_com_num", current_com_num);
+                cmd.Parameters.AddWithValue("@com_num", tb_com_num.Text);
                 cmd.ExecuteNonQuery();
                 
             }
@@ -261,6 +262,7 @@ namespace Login
                 if(sqlcon!=null)
                     sqlcon.Close();
                 select_all();
+                
             }
             
         }
@@ -272,7 +274,7 @@ namespace Login
             {
                 sqlcon.Open();
                 SqlCommand cmd = new SqlCommand("delete from COM_INFO where COM_NUM = @com_num", sqlcon);
-                cmd.Parameters.AddWithValue("@com_num", current_com_num);
+                cmd.Parameters.AddWithValue("@com_num", tb_com_num.Text);
                 cmd.ExecuteNonQuery();
                 select_all();
                 text_clean();

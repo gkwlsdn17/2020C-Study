@@ -225,7 +225,10 @@ namespace Login
         {
             formOpen = open;
         }
-
+        public static bool getFormOpen()
+        {
+            return formOpen;
+        }
         private void pictureBox2_Click(object sender, EventArgs e) // 맨 처음 로고화면으로 돌아감
         {
             afterLoginMainPage1.BringToFront();

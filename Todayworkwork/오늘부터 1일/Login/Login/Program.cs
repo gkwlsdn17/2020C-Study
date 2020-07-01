@@ -19,8 +19,14 @@ namespace Login
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            Application.Run(new MainForm());
-            Application.Run(new IMemberMainForm());
+            if (MainForm.getFormOpen())
+            {
+                Application.Run(new MainForm());
+            }
+            else
+            {
+                Application.Run(new IMemberMainForm());
+            }
             
         }
     }

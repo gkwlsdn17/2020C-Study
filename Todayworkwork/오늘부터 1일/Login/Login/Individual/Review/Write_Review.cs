@@ -53,12 +53,7 @@ namespace Login.Individual.Review
         // 리뷰 데이터 입력
         private void insert_review()
         {
-            conn.ConnectionString = string.Format("Data Source={0}; " +
-                        "Initial Catalog = {1};" +
-                        "Persist Security Info = {2};" +
-                        "User ID = {3};" +
-                        "Password={4}"
-            , "munggu.iptime.org,11113", "TodayWorkWork", "True", "sa", "8765432!");
+            conn.ConnectionString = DBConnection.strconn;
             conn = new SqlConnection(conn.ConnectionString);
             conn.Open();
             Console.WriteLine("review DB 연결 성공");          // 테스트

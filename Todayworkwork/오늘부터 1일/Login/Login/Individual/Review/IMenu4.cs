@@ -31,12 +31,7 @@ namespace Login
         {
             try
             {
-                conn.ConnectionString = string.Format("Data Source={0}; " +
-                        "Initial Catalog = {1};" +
-                        "Persist Security Info = {2};" +
-                        "User ID = {3};" +
-                        "Password={4}"
-            , "munggu.iptime.org,11113", "TodayWorkWork", "True", "sa", "8765432!");
+                conn.ConnectionString = DBConnection.strconn;
 
                 conn = new SqlConnection(conn.ConnectionString);
                 conn.Open();
@@ -73,6 +68,13 @@ namespace Login
                 Console.WriteLine(e.StackTrace);
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.Source);
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
             }
         }
 
@@ -119,15 +121,28 @@ namespace Login
         }
         private void show_review_detail()
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            DataSet ds = new DataSet();
-            SqlDataAdapter adpt = new SqlDataAdapter("select * from review where R_NUM=" + r_num, conn);
-            adpt.Fill(ds);
-            View_Review vr = new View_Review(ds);
-            vr.MaximizeBox = false;
-            vr.MinimizeBox = false;
-            vr.Show();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                DataSet ds = new DataSet();
+                SqlDataAdapter adpt = new SqlDataAdapter("select * from review where R_NUM=" + r_num, conn);
+                adpt.Fill(ds);
+                View_Review vr = new View_Review(ds);
+                vr.MaximizeBox = false;
+                vr.MinimizeBox = false;
+                vr.Show();
+            }
+            catch (Exception)
+            {
+
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            
+            }
+            
         }
 
 

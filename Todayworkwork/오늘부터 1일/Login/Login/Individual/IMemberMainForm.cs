@@ -176,7 +176,10 @@ namespace Login
         {
             formOpen = open;
         }
-
+        public static bool getFormOpen()
+        {
+            return formOpen;
+        }
         private void pictureBox2_Click(object sender, EventArgs e) // 로고가 있는 처음 화면을 띄움
         {
             afterLoginMainPage1.BringToFront();
