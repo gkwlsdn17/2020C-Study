@@ -159,6 +159,7 @@ namespace Login.Individual.Review
                     cmd.Parameters.AddWithValue("@info_com_name", review_ComName);
                     cmd.ExecuteNonQuery();
                 }
+
                 conn.Close();
                 Close();
 
