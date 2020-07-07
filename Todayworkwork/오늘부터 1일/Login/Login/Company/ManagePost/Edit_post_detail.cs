@@ -118,10 +118,13 @@ namespace Login.Company.ManagePost
                 cmd.Parameters.AddWithValue("@period", datetime_finish.Value);
 
                 cmd.ExecuteNonQuery();
+
+                Log.printLog("공고 수정 성공");
                 Close();
             }
             catch (Exception ex)
             {
+                Log.printLog("공고 수정 오류");
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.Source);
                 Console.WriteLine(ex.StackTrace);

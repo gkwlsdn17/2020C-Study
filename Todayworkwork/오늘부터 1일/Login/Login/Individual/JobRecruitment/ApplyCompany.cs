@@ -78,9 +78,15 @@ namespace Login.Individual.CompanyInfo
 
                               }
                         }
-                        DR.Close();
+                
+                DR.Close();
+                //해당 공고의 조회수 증가
+                cmd.CommandText = "update RECRUIT set COUNT = (select COUNT from RECRUIT where W_NUM = @w_num3)+1 where W_NUM = @w_num4";
+                cmd.Parameters.AddWithValue("@w_num3", PostInfo.getWnum());
+                cmd.Parameters.AddWithValue("@w_num4", PostInfo.getWnum());
+                cmd.ExecuteNonQuery();
 
-                  }
+            }
                   catch (Exception ee)
                   {
                         MessageBox.Show(ee.Message);

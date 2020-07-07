@@ -161,11 +161,13 @@ namespace Login.Individual.Review
                 }
 
                 conn.Close();
+                Log.printLog("후기 등록 완료");
                 Close();
 
             }
             catch (Exception ex)
             {
+                Log.printLog("후기 등록 실패");
                 Console.WriteLine(ex.StackTrace);
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.Source);

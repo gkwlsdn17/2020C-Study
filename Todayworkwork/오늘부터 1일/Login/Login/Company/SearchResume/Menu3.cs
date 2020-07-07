@@ -213,7 +213,7 @@ namespace Login
                 //cmd.Parameters.AddWithValue("@re_num", ds.Tables[0].Rows[0]["RE_NUM"]);
                 cmd.ExecuteNonQuery();
 
-                Log.printLog($"{re_num}번 글 조회");
+                Log.printLog($"{re_num}번 이력서 글 조회");
 
                 sr.TopLevel = false;
                 sr.FormBorderStyle = FormBorderStyle.None;

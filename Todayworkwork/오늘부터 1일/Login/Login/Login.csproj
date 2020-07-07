@@ -302,6 +302,9 @@
     <EmbeddedResource Include="Individual\CompanyInfo\IMenu2.resx">
       <DependentUpon>IMenu2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Individual\JobRecruitment\PostInfo.resx">
+      <DependentUpon>PostInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Individual\Resume_menu3\IMenu3.resx">
       <DependentUpon>IMenu3.cs</DependentUpon>
     </EmbeddedResource>

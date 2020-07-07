@@ -96,6 +96,7 @@ namespace Login.Individual.Review
                 cmd.Parameters.AddWithValue("@r_num", r_num);
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                Log.printLog("후기 삭제 완료");
                 Close();
                 MessageBox.Show("삭제 완료");
             }

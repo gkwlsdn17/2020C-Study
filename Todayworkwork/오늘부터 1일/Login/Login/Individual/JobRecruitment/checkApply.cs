@@ -50,12 +50,14 @@ namespace Login.Individual.JobRecruitment
                 else
                 {
                     cmd.ExecuteNonQuery();
+
+                    //해당 공고의 지원자 수 증가
                     cmd.CommandText = "Update RECRUIT set A_COUNT = (select A_COUNT from RECRUIT where W_NUM = @w_num1)+1 where W_NUM = @w_num2";
                     cmd.Parameters.AddWithValue("@w_num1", PostInfo.getWnum());
                     cmd.Parameters.AddWithValue("@w_num2", PostInfo.getWnum());
                     cmd.ExecuteNonQuery();
-                    
 
+                    //회사 정보 폼의 회사 지원수 증가
                     cmd.CommandText = "select * from COM_INFO where COM_NAME = @com_name";
                     cmd.Parameters.AddWithValue("@com_name", PostInfo.getCname());
                     SqlDataAdapter adpt = new SqlDataAdapter(cmd);
@@ -70,11 +72,13 @@ namespace Login.Individual.JobRecruitment
                         cmd.ExecuteNonQuery();
                     }
                     MessageBox.Show("지원이 완료되었습니다!");
+                    Log.printLog($"{PostInfo.getWnum()}번글 지원 완료");
                 }
 
             }
             catch (Exception ee)
             {
+                Log.printLog("지원 실패");
                 MessageBox.Show(ee.StackTrace);
                 MessageBox.Show(ee.Message);
 

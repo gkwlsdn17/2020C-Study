@@ -102,7 +102,7 @@ namespace Login
             }
             private void dateTimeStart_CloseUp(object sender, EventArgs e)
             {
-                  if (dateTimeStart.Value < DateTime.Now)
+                  if (dateTimeStart.Value.Year<dateTimeStart.Value.Year && dateTimeStart.Value.Month<DateTime.Now.Month && dateTimeStart.Value.Day < DateTime.Now.Day)
                   {
                         MessageBox.Show("현재 날짜보다 전의 날짜로는 설정할 수 없습니다");
                         dateTimeStart.Value = DateTime.Now;
@@ -112,7 +112,7 @@ namespace Login
 
             private void dateTimeFinish_CloseUp(object sender, EventArgs e)
             {
-                  if (dateTimeStart.Value >= dateTimeFinish.Value)
+                  if (dateTimeStart.Value > dateTimeFinish.Value)
                   {
                         MessageBox.Show("종료시기는 시작시기보다 뒤로 설정하여 주십시오");
                         dateTimeFinish.Value = DateTime.Now;
@@ -121,7 +121,7 @@ namespace Login
 
             private void deadLineTime_CloseUp(object sender, EventArgs e)
             {
-                  if (deadLineTime.Value >= dateTimeFinish.Value || deadLineTime.Value <= dateTimeStart.Value)
+                  if (deadLineTime.Value > dateTimeFinish.Value || deadLineTime.Value < dateTimeStart.Value)
                   {
                         MessageBox.Show("접수 마감 날짜는 작업시작시기와 종료시기에 맞추어 설정하여 주세요");
                         deadLineTime.Value = DateTime.Now;

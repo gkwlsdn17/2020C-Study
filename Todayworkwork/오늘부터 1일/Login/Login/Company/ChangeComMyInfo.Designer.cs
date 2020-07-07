@@ -58,19 +58,21 @@
             // 
             this.text_comTel.Font = new System.Drawing.Font("HY강M", 15F);
             this.text_comTel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.text_comTel.Location = new System.Drawing.Point(487, 244);
+            this.text_comTel.Location = new System.Drawing.Point(557, 305);
+            this.text_comTel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.text_comTel.Name = "text_comTel";
-            this.text_comTel.Size = new System.Drawing.Size(391, 30);
+            this.text_comTel.Size = new System.Drawing.Size(446, 36);
             this.text_comTel.TabIndex = 5;
-            this.text_comTel.Text = " 000-000-0000";
+            this.text_comTel.Text = "\'-\' 빼고 입력해주세요";
             // 
             // text_comNum
             // 
             this.text_comNum.Font = new System.Drawing.Font("HY강M", 15F);
             this.text_comNum.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.text_comNum.Location = new System.Drawing.Point(487, 404);
+            this.text_comNum.Location = new System.Drawing.Point(557, 505);
+            this.text_comNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.text_comNum.Name = "text_comNum";
-            this.text_comNum.Size = new System.Drawing.Size(391, 30);
+            this.text_comNum.Size = new System.Drawing.Size(446, 36);
             this.text_comNum.TabIndex = 7;
             this.text_comNum.Text = " 0123456789";
             // 
@@ -78,9 +80,10 @@
             // 
             this.text_comAddr.Font = new System.Drawing.Font("HY강M", 15F);
             this.text_comAddr.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.text_comAddr.Location = new System.Drawing.Point(488, 324);
+            this.text_comAddr.Location = new System.Drawing.Point(558, 405);
+            this.text_comAddr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.text_comAddr.Name = "text_comAddr";
-            this.text_comAddr.Size = new System.Drawing.Size(391, 30);
+            this.text_comAddr.Size = new System.Drawing.Size(446, 36);
             this.text_comAddr.TabIndex = 6;
             this.text_comAddr.Text = " 대구광역시 동구 신천3동";
             // 
@@ -88,9 +91,10 @@
             // 
             this.text_comName.Font = new System.Drawing.Font("HY강M", 15F);
             this.text_comName.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.text_comName.Location = new System.Drawing.Point(487, 166);
+            this.text_comName.Location = new System.Drawing.Point(557, 208);
+            this.text_comName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.text_comName.Name = "text_comName";
-            this.text_comName.Size = new System.Drawing.Size(391, 30);
+            this.text_comName.Size = new System.Drawing.Size(446, 36);
             this.text_comName.TabIndex = 4;
             this.text_comName.Text = " 경북산업직업전문학원";
             // 
@@ -98,19 +102,21 @@
             // 
             this.text_phone.Font = new System.Drawing.Font("HY강M", 15F);
             this.text_phone.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.text_phone.Location = new System.Drawing.Point(54, 244);
+            this.text_phone.Location = new System.Drawing.Point(62, 305);
+            this.text_phone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.text_phone.Name = "text_phone";
-            this.text_phone.Size = new System.Drawing.Size(391, 30);
+            this.text_phone.Size = new System.Drawing.Size(446, 36);
             this.text_phone.TabIndex = 1;
-            this.text_phone.Text = " 010-0000-0000";
+            this.text_phone.Text = "\'-\' 빼고 입력해주세요";
             // 
             // text_email
             // 
             this.text_email.Font = new System.Drawing.Font("HY강M", 15F);
             this.text_email.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.text_email.Location = new System.Drawing.Point(54, 404);
+            this.text_email.Location = new System.Drawing.Point(62, 505);
+            this.text_email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.text_email.Name = "text_email";
-            this.text_email.Size = new System.Drawing.Size(391, 30);
+            this.text_email.Size = new System.Drawing.Size(446, 36);
             this.text_email.TabIndex = 3;
             this.text_email.Text = " someone@email.com";
             // 
@@ -119,9 +125,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("HY강M", 15F);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label6.Location = new System.Drawing.Point(50, 378);
+            this.label6.Location = new System.Drawing.Point(57, 472);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 20);
+            this.label6.Size = new System.Drawing.Size(87, 25);
             this.label6.TabIndex = 105;
             this.label6.Text = "이메일";
             // 
@@ -129,9 +135,10 @@
             // 
             this.text_addr.Font = new System.Drawing.Font("HY강M", 15F);
             this.text_addr.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.text_addr.Location = new System.Drawing.Point(54, 324);
+            this.text_addr.Location = new System.Drawing.Point(62, 405);
+            this.text_addr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.text_addr.Name = "text_addr";
-            this.text_addr.Size = new System.Drawing.Size(391, 30);
+            this.text_addr.Size = new System.Drawing.Size(446, 36);
             this.text_addr.TabIndex = 2;
             this.text_addr.Text = " 대구광역시 동구 아양로 42길";
             // 
@@ -140,9 +147,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("HY강M", 15F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label5.Location = new System.Drawing.Point(50, 298);
+            this.label5.Location = new System.Drawing.Point(57, 372);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
+            this.label5.Size = new System.Drawing.Size(62, 25);
             this.label5.TabIndex = 104;
             this.label5.Text = "주소";
             // 
@@ -153,9 +160,10 @@
             this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_update.Font = new System.Drawing.Font("HY강M", 15F);
             this.btn_update.ForeColor = System.Drawing.Color.White;
-            this.btn_update.Location = new System.Drawing.Point(391, 474);
+            this.btn_update.Location = new System.Drawing.Point(447, 592);
+            this.btn_update.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(151, 58);
+            this.btn_update.Size = new System.Drawing.Size(173, 72);
             this.btn_update.TabIndex = 8;
             this.btn_update.Text = "수정";
             this.btn_update.UseVisualStyleBackColor = false;
@@ -169,9 +177,10 @@
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exit.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_exit.ForeColor = System.Drawing.Color.White;
-            this.btn_exit.Location = new System.Drawing.Point(854, 0);
+            this.btn_exit.Location = new System.Drawing.Point(976, 0);
+            this.btn_exit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(63, 85);
+            this.btn_exit.Size = new System.Drawing.Size(72, 106);
             this.btn_exit.TabIndex = 4;
             this.btn_exit.Text = "x";
             this.btn_exit.UseVisualStyleBackColor = true;
@@ -181,9 +190,10 @@
             // 
             this.text_name.Font = new System.Drawing.Font("HY강M", 15F);
             this.text_name.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.text_name.Location = new System.Drawing.Point(54, 164);
+            this.text_name.Location = new System.Drawing.Point(62, 205);
+            this.text_name.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.text_name.Name = "text_name";
-            this.text_name.Size = new System.Drawing.Size(391, 30);
+            this.text_name.Size = new System.Drawing.Size(446, 36);
             this.text_name.TabIndex = 0;
             this.text_name.Text = " User Name";
             // 
@@ -192,9 +202,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("HY강M", 15F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label1.Location = new System.Drawing.Point(50, 138);
+            this.label1.Location = new System.Drawing.Point(57, 172);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 20);
+            this.label1.Size = new System.Drawing.Size(62, 25);
             this.label1.TabIndex = 95;
             this.label1.Text = "이름";
             // 
@@ -206,8 +216,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(917, 85);
+            this.panel1.Size = new System.Drawing.Size(1048, 106);
             this.panel1.TabIndex = 94;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -216,9 +227,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(14, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 64);
+            this.pictureBox1.Size = new System.Drawing.Size(114, 80);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -228,9 +240,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("HY강M", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(118, 29);
+            this.label3.Location = new System.Drawing.Point(135, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 27);
+            this.label3.Size = new System.Drawing.Size(185, 34);
             this.label3.TabIndex = 0;
             this.label3.Text = "내정보수정";
             // 
@@ -239,9 +251,9 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("HY강M", 15F);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label11.Location = new System.Drawing.Point(484, 378);
+            this.label11.Location = new System.Drawing.Point(553, 472);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(109, 20);
+            this.label11.Size = new System.Drawing.Size(137, 25);
             this.label11.TabIndex = 100;
             this.label11.Text = "사업자번호";
             // 
@@ -250,9 +262,9 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("HY강M", 15F);
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label10.Location = new System.Drawing.Point(484, 298);
+            this.label10.Location = new System.Drawing.Point(553, 372);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 20);
+            this.label10.Size = new System.Drawing.Size(112, 25);
             this.label10.TabIndex = 99;
             this.label10.Text = "기업주소";
             // 
@@ -261,9 +273,9 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("HY강M", 15F);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label9.Location = new System.Drawing.Point(484, 138);
+            this.label9.Location = new System.Drawing.Point(553, 172);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 20);
+            this.label9.Size = new System.Drawing.Size(87, 25);
             this.label9.TabIndex = 98;
             this.label9.Text = "기업명";
             // 
@@ -272,9 +284,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("HY강M", 15F);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label8.Location = new System.Drawing.Point(51, 218);
+            this.label8.Location = new System.Drawing.Point(58, 272);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 20);
+            this.label8.Size = new System.Drawing.Size(112, 25);
             this.label8.TabIndex = 96;
             this.label8.Text = "전화번호";
             // 
@@ -283,18 +295,18 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("HY강M", 15F);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label12.Location = new System.Drawing.Point(484, 218);
+            this.label12.Location = new System.Drawing.Point(553, 272);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(136, 20);
+            this.label12.Size = new System.Drawing.Size(170, 25);
             this.label12.TabIndex = 101;
             this.label12.Text = "기업 전화번호";
             // 
             // ChangeComMyInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(917, 557);
+            this.ClientSize = new System.Drawing.Size(1048, 696);
             this.Controls.Add(this.text_comTel);
             this.Controls.Add(this.text_comNum);
             this.Controls.Add(this.text_comAddr);

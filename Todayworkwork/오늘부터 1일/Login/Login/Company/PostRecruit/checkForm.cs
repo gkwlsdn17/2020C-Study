@@ -62,7 +62,7 @@ namespace Login.PostRecruit
                   }
                   catch (Exception ee)
                   {
-
+                        Log.printLog("공고 등록 오류");
                         MessageBox.Show(ee.Message);
                         MessageBox.Show(ee.StackTrace);
                   }
@@ -104,11 +104,12 @@ namespace Login.PostRecruit
                               MessageBox.Show("텍스트 박스에 문자를 삽입하여 주세요");
                               break;
                         }
+                        /*
                         if (Menu1.getStart().Date == Menu1.getFinish().Date || Menu1.getStart().Date == Menu1.getDead().Date)
                         {
                               MessageBox.Show("날짜를 입력하세요");
                               break;
-                        }
+                        }*/
                         else
                         {
                               insertData();
@@ -129,6 +130,7 @@ namespace Login.PostRecruit
 
                   if (str == "yes")
                   {
+                        Log.printLog("공고 등록 성공");
                         Menu2.getInstance().selectData();
                         Menu2.getInstance().BringToFront();
 

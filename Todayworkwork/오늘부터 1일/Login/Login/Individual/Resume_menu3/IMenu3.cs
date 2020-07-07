@@ -78,6 +78,7 @@ namespace Login
                     //cmd.Parameters.AddWithValue("@re_num2", IMenu3.getRenum());
                     //cmd.ExecuteNonQuery();
                     MessageBox.Show("등록되었습니다.");
+                    Log.printLog("이력서 저장 완료");
                 }
 
                 
@@ -85,6 +86,7 @@ namespace Login
             }
             catch (Exception ee)
             {
+                Log.printLog("이력서 저장 실패");
                 MessageBox.Show(ee.Message);
                 MessageBox.Show(ee.StackTrace);
             }
@@ -112,8 +114,11 @@ namespace Login
 
                 cmd.BeginExecuteNonQuery();
                 sqlconn.Close();
+
+                Log.printLog("이력서 수정 완료");
             }catch(Exception ee)
             {
+                Log.printLog("이력서 수정 실패");
                 MessageBox.Show(ee.Message);
                 MessageBox.Show(ee.StackTrace);
             }

@@ -64,7 +64,7 @@ namespace LogIn
                         //IMemberMainForm.setID(text_id.Text);
                         IMemberMainForm.setFormOpen(true);
                         conn.Close();
-                        Log.printLog("개인회원 로그인 성공");
+                        Log.printLog(text_id.Text+" 개인회원 로그인 성공");
                         imain.Show();
                         this.Close();
 
@@ -95,7 +95,7 @@ namespace LogIn
                         //MainForm.setID(text_id.Text);
                         MainForm.setFormOpen(true);
                         conn.Close();
-                        Log.printLog("기업회원 로그인 성공");
+                        Log.printLog(text_id.Text+" 기업회원 로그인 성공");
                         main.Show();
                         this.Close();
                     }

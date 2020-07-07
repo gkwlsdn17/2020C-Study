@@ -38,9 +38,11 @@ namespace Login.Company.ManagePost
                 adpt.Fill(ds);
                 init_list_setting(ds.Tables[0]);
                 sqlcon.Close();
+                Log.printLog("지원자 리스트 로드 성공");
             }
             catch(Exception ee)
             {
+                Log.printLog("지원자 리스트 로드 실패");
                 Console.WriteLine(ee.StackTrace);
             }
         }
@@ -100,11 +102,13 @@ namespace Login.Company.ManagePost
                     srta.MaximizeBox = false;
                     srta.MinimizeBox = false;
                     srta.ShowDialog();
+                    Log.printLog("이력서 호출 성공");
 
                 }
             }
             catch (Exception ex)
             {
+                Log.printLog("이력서 호출 실패");
                 Console.WriteLine("btn_show_detail_click Error");                       // 에러메세지
                 Console.WriteLine(ex.StackTrace);
                 Console.WriteLine(ex.Message);

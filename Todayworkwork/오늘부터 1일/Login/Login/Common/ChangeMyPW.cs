@@ -48,9 +48,11 @@ namespace Login
                             cmd.Parameters.AddWithValue("@id", MainForm.getID());
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("변경이 완료되었습니다.\r\n다시 로그인 해 주세요");
+                            Log.printLog("기업회원 비밀번호 변경 완료");
                         }
                         catch (Exception)
                         {
+                            Log.printLog("기업회원 비밀번호 변경 에러");
                             MessageBox.Show("에러");
                         }
                         finally
@@ -85,11 +87,12 @@ namespace Login
                             cmd.Parameters.AddWithValue("@id", IMemberMainForm.getID());
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("변경이 완료되었습니다.\r\n다시 로그인 해 주세요");
+                            Log.printLog("개인회원 비밀번호 변경 완료");
                         }
                         catch (Exception)
                         {
-
-                            throw;
+                            MessageBox.Show("변경에 실패했습니다.");
+                            Log.printLog("개인회원 비밀번호 변경 에러");
                         }
                         finally
                         {
