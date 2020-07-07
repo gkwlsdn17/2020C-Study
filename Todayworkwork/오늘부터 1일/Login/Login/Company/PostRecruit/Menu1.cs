@@ -102,7 +102,7 @@ namespace Login
             }
             private void dateTimeStart_CloseUp(object sender, EventArgs e)
             {
-                  if (dateTimeStart.Value.Year<dateTimeStart.Value.Year && dateTimeStart.Value.Month<DateTime.Now.Month && dateTimeStart.Value.Day < DateTime.Now.Day)
+                  if (dateTimeStart.Value.Year < DateTime.Now.Year && dateTimeStart.Value.Month < DateTime.Now.Month && dateTimeStart.Value.Day < DateTime.Now.Day)
                   {
                         MessageBox.Show("현재 날짜보다 전의 날짜로는 설정할 수 없습니다");
                         dateTimeStart.Value = DateTime.Now;
