@@ -78,6 +78,7 @@ namespace Login
                     else
                     {
                         MessageBox.Show("등록된 회원 정보가 없습니다.");
+                        
                     }
                     //conn.Close();
                 }
@@ -92,6 +93,18 @@ namespace Login
                     conn.Close();
             }
             
+        }
+        private void textbox_Enter(object sender, EventArgs e)
+        {
+            ((TextBox)sender).Text = "";
+        }
+
+        private void text_tel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

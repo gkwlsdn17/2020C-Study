@@ -94,7 +94,7 @@ namespace Login
                 MessageBox.Show("주소를 정확히 입력해주세요.");
             else if (String.IsNullOrEmpty(text_email.Text) || String.IsNullOrWhiteSpace(text_email.Text) || "someone@email.com".Equals(text_email.Text))
                 MessageBox.Show("이메일을 정확히 입력해주세요.");
-            else if (String.IsNullOrEmpty(text_phone.Text) || String.IsNullOrWhiteSpace(text_phone.Text) || "000-0000-0000".Equals(text_phone.Text))
+            else if (String.IsNullOrEmpty(text_phone.Text) || String.IsNullOrWhiteSpace(text_phone.Text) || "'-' 빼고 입력해주세요".Equals(text_phone.Text))
                 MessageBox.Show("전화번호를 정확히 입력해주세요.");
             else
                 insert_customer();
@@ -110,7 +110,7 @@ namespace Login
                 MessageBox.Show("주소를 정확히 입력해주세요.");
             else if (String.IsNullOrEmpty(text_email.Text) || String.IsNullOrWhiteSpace(text_email.Text) || "someone@email.com".Equals(text_email.Text))
                 MessageBox.Show("이메일을 정확히 입력해주세요.");
-            else if (String.IsNullOrEmpty(text_phone.Text) || String.IsNullOrWhiteSpace(text_phone.Text) || "000-0000-0000".Equals(text_phone.Text))
+            else if (String.IsNullOrEmpty(text_phone.Text) || String.IsNullOrWhiteSpace(text_phone.Text) || "'-' 빼고 입력해주세요".Equals(text_phone.Text))
                 MessageBox.Show("전화번호를 정확히 입력해주세요.");
             else if (String.IsNullOrEmpty(text_comName.Text) || String.IsNullOrWhiteSpace(text_comName.Text) || "Company Name".Equals(text_comName.Text))
                 MessageBox.Show("기업명을 정확히 입력해주세요.");
@@ -118,7 +118,7 @@ namespace Login
                 MessageBox.Show("기업 주소를 정확히 입력해주세요.");
             else if (String.IsNullOrEmpty(text_comNum.Text) || String.IsNullOrWhiteSpace(text_comNum.Text) || "000000000".Equals(text_comNum.Text) || (text_comNum.TextLength < 10))
                 MessageBox.Show("사업자번호를 정확히 입력해주세요.");
-            else if (String.IsNullOrEmpty(text_comTel.Text) || String.IsNullOrWhiteSpace(text_comTel.Text) || "000-0000-0000".Equals(text_comTel.Text))
+            else if (String.IsNullOrEmpty(text_comTel.Text) || String.IsNullOrWhiteSpace(text_comTel.Text) || "'-' 빼고 입력해주세요".Equals(text_comTel.Text))
                 MessageBox.Show("기업 전화번호를 정확히 입력해주세요.");
             else
                 insert_com();

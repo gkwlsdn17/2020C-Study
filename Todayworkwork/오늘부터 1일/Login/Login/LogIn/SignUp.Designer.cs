@@ -340,6 +340,7 @@
             this.text_comTel.Font = new System.Drawing.Font("HY강M", 15F);
             this.text_comTel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.text_comTel.Location = new System.Drawing.Point(688, 556);
+            this.text_comTel.MaxLength = 11;
             this.text_comTel.Name = "text_comTel";
             this.text_comTel.Size = new System.Drawing.Size(391, 30);
             this.text_comTel.TabIndex = 12;
@@ -386,6 +387,7 @@
             this.text_phone.Font = new System.Drawing.Font("HY강M", 15F);
             this.text_phone.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.text_phone.Location = new System.Drawing.Point(688, 236);
+            this.text_phone.MaxLength = 11;
             this.text_phone.Name = "text_phone";
             this.text_phone.Size = new System.Drawing.Size(391, 30);
             this.text_phone.TabIndex = 8;

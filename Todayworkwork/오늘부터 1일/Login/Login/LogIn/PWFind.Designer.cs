@@ -69,6 +69,7 @@
             this.text_name.Name = "text_name";
             this.text_name.Size = new System.Drawing.Size(276, 26);
             this.text_name.TabIndex = 2;
+            this.text_name.Enter += new System.EventHandler(this.textbox_Enter);
             // 
             // text_id
             // 
@@ -77,6 +78,7 @@
             this.text_id.Name = "text_id";
             this.text_id.Size = new System.Drawing.Size(276, 26);
             this.text_id.TabIndex = 4;
+            this.text_id.Enter += new System.EventHandler(this.textbox_Enter);
             // 
             // label3
             // 
@@ -92,9 +94,12 @@
             // 
             this.text_tel.Font = new System.Drawing.Font("굴림", 12F);
             this.text_tel.Location = new System.Drawing.Point(52, 300);
+            this.text_tel.MaxLength = 11;
             this.text_tel.Name = "text_tel";
             this.text_tel.Size = new System.Drawing.Size(276, 26);
             this.text_tel.TabIndex = 6;
+            this.text_tel.Enter += new System.EventHandler(this.textbox_Enter);
+            this.text_tel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_tel_KeyPress);
             // 
             // label4
             // 
@@ -113,6 +118,7 @@
             this.text_email.Name = "text_email";
             this.text_email.Size = new System.Drawing.Size(276, 26);
             this.text_email.TabIndex = 8;
+            this.text_email.Enter += new System.EventHandler(this.textbox_Enter);
             // 
             // label5
             // 

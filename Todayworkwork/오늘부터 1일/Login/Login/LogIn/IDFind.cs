@@ -99,5 +99,18 @@ namespace Login
             }
             
         }
+
+        private void textbox_Enter(object sender, EventArgs e)
+        {
+            ((TextBox)sender).Text = "";
+        }
+
+        private void text_tel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

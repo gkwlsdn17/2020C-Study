@@ -99,7 +99,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(118, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(230, 34);
+            this.label2.Size = new System.Drawing.Size(183, 27);
             this.label2.TabIndex = 2;
             this.label2.Text = "오늘부터 일일";
             // 
@@ -109,9 +109,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("HY강M", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label1.Location = new System.Drawing.Point(319, 436);
+            this.label1.Location = new System.Drawing.Point(319, 430);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 30);
+            this.label1.Size = new System.Drawing.Size(91, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "User ID:";
             // 
@@ -119,7 +119,7 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(520, 134);
+            this.pictureBox2.Location = new System.Drawing.Point(520, 128);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(160, 173);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -132,9 +132,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("HY강M", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label3.Location = new System.Drawing.Point(508, 323);
+            this.label3.Location = new System.Drawing.Point(508, 317);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(230, 30);
+            this.label3.Size = new System.Drawing.Size(184, 24);
             this.label3.TabIndex = 4;
             this.label3.Text = "Please Login First";
             // 
@@ -142,18 +142,18 @@
             // 
             this.text_id.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.text_id.Font = new System.Drawing.Font("HY강M", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.text_id.Location = new System.Drawing.Point(313, 472);
+            this.text_id.Location = new System.Drawing.Point(313, 466);
             this.text_id.Name = "text_id";
-            this.text_id.Size = new System.Drawing.Size(575, 42);
+            this.text_id.Size = new System.Drawing.Size(575, 35);
             this.text_id.TabIndex = 5;
             // 
             // text_pw
             // 
             this.text_pw.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.text_pw.Font = new System.Drawing.Font("HY강M", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.text_pw.Location = new System.Drawing.Point(313, 575);
+            this.text_pw.Location = new System.Drawing.Point(313, 569);
             this.text_pw.Name = "text_pw";
-            this.text_pw.Size = new System.Drawing.Size(575, 42);
+            this.text_pw.Size = new System.Drawing.Size(575, 35);
             this.text_pw.TabIndex = 7;
             this.text_pw.UseSystemPasswordChar = true;
             // 
@@ -163,9 +163,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("HY강M", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label4.Location = new System.Drawing.Point(319, 541);
+            this.label4.Location = new System.Drawing.Point(319, 535);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 30);
+            this.label4.Size = new System.Drawing.Size(115, 24);
             this.label4.TabIndex = 6;
             this.label4.Text = "Password:";
             // 
@@ -177,7 +177,7 @@
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_login.Font = new System.Drawing.Font("HY강M", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
-            this.btn_login.Location = new System.Drawing.Point(313, 700);
+            this.btn_login.Location = new System.Drawing.Point(313, 694);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(575, 46);
             this.btn_login.TabIndex = 8;
@@ -191,9 +191,9 @@
             this.rbtn_customer.AutoSize = true;
             this.rbtn_customer.Font = new System.Drawing.Font("HY강M", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbtn_customer.ForeColor = System.Drawing.Color.Black;
-            this.rbtn_customer.Location = new System.Drawing.Point(447, 385);
+            this.rbtn_customer.Location = new System.Drawing.Point(447, 379);
             this.rbtn_customer.Name = "rbtn_customer";
-            this.rbtn_customer.Size = new System.Drawing.Size(164, 34);
+            this.rbtn_customer.Size = new System.Drawing.Size(132, 28);
             this.rbtn_customer.TabIndex = 10;
             this.rbtn_customer.TabStop = true;
             this.rbtn_customer.Text = "개인 회원";
@@ -205,9 +205,9 @@
             this.rbtn_comcustomer.AutoSize = true;
             this.rbtn_comcustomer.Font = new System.Drawing.Font("HY강M", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbtn_comcustomer.ForeColor = System.Drawing.Color.Black;
-            this.rbtn_comcustomer.Location = new System.Drawing.Point(695, 385);
+            this.rbtn_comcustomer.Location = new System.Drawing.Point(695, 379);
             this.rbtn_comcustomer.Name = "rbtn_comcustomer";
-            this.rbtn_comcustomer.Size = new System.Drawing.Size(164, 34);
+            this.rbtn_comcustomer.Size = new System.Drawing.Size(132, 28);
             this.rbtn_comcustomer.TabIndex = 11;
             this.rbtn_comcustomer.TabStop = true;
             this.rbtn_comcustomer.Text = "기업 회원";
@@ -262,7 +262,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.ClientSize = new System.Drawing.Size(1200, 788);
             this.Controls.Add(this.btn_pwFind);
             this.Controls.Add(this.btn_idFind);
             this.Controls.Add(this.btn_signUp);
